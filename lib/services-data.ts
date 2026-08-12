@@ -73,3 +73,16 @@ export function slugify(value: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
+
+// Detail pages that exist as real routes instead of just anchors on /services.
+const serviceDetailRoutes: Record<string, string> = {
+  "IoT & Wearable Solutions": "/services/iot-wearable-solutions",
+  "Mobile App Development": "/services/mobile-app-development",
+  "Semiconductor Testing": "/services/semiconductor-testing",
+  "Skill Development": "/services/skill-development",
+};
+
+// Gives each service item the right destination for menus and listing links.
+export function getServiceHref(value: string): string {
+  return serviceDetailRoutes[value] ?? `/services#${slugify(value)}`;
+}

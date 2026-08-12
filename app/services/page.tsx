@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { serviceColumns, slugify } from "@/lib/services-data";
+import { getServiceHref, serviceColumns, slugify } from "@/lib/services-data";
 
 export const metadata: Metadata = {
   title: "Services | Softzino Technologies",
@@ -52,7 +52,12 @@ export default function ServicesPage() {
                 <ul className="mt-4 flex flex-col gap-3 border-l border-border-light pl-4">
                   {col.items.map((item) => (
                     <li key={item} id={slugify(item)} className="scroll-mt-28">
-                      <span className="text-sm text-body-text">{item}</span>
+                      <Link
+                        href={getServiceHref(item)}
+                        className="text-sm text-body-text transition-colors hover:text-teal-primary hover:underline"
+                      >
+                        {item}
+                      </Link>
                     </li>
                   ))}
                 </ul>

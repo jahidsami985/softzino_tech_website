@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
-import { serviceColumns, slugify } from "@/lib/services-data";
+import { getServiceHref, serviceColumns } from "@/lib/services-data";
 
 // Main navigation links that appear beside the Services dropdown.
 const navLinks = [
@@ -86,7 +86,7 @@ export default function Header() {
                         {col.items.map((item) => (
                           <li key={item}>
                             <Link
-                              href={`/services#${slugify(item)}`}
+                              href={getServiceHref(item)}
                               className="text-base leading-relaxed text-body-text transition-colors hover:text-teal-primary"
                             >
                               {item}
@@ -159,7 +159,7 @@ export default function Header() {
                       {col.items.map((item) => (
                         <li key={item}>
                           <Link
-                            href={`/services#${slugify(item)}`}
+                            href={getServiceHref(item)}
                             className="block py-1 text-sm text-white/70"
                           >
                             {item}
