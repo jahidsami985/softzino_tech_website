@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, LayoutGrid, ShoppingCart, Users2 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import { assetPath } from "@/lib/site-paths";
 
 export const metadata: Metadata = {
   title: "Off-the-Shelf Solutions | Softzino Technologies",
@@ -41,7 +42,7 @@ export default function OffTheShelfPage() {
             {/* Featured product card using the larger ERP dashboard crop. */}
             <article className="overflow-hidden rounded-card border border-border-light bg-bg-card-gray lg:col-span-2">
               <Image
-                src="/images/solutions-erp-wide.png"
+                src={assetPath("/images/solutions-erp-wide.png")}
                 alt="Softzino ERP dashboard preview"
                 width={760}
                 height={320}
@@ -70,7 +71,7 @@ export default function OffTheShelfPage() {
             {/* Supporting product card for Aura CRM. */}
             <article className="overflow-hidden rounded-card border border-border-light bg-bg-card-gray">
               <Image
-                src="/images/solutions-crm-wide.png"
+                src={assetPath("/images/solutions-crm-wide.png")}
                 alt="Aura CRM analytics dashboard"
                 width={367}
                 height={207}
@@ -97,7 +98,7 @@ export default function OffTheShelfPage() {
             {/* Supporting product card for HRMS. */}
             <article className="overflow-hidden rounded-card border border-border-light bg-bg-card-gray">
               <Image
-                src="/images/solutions-hrms-wide.png"
+                src={assetPath("/images/solutions-hrms-wide.png")}
                 alt="Softzino HRMS employee directory preview"
                 width={565}
                 height={225}

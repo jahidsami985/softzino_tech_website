@@ -23,6 +23,7 @@ import {
   Users2,
   ClipboardList,
 } from "lucide-react";
+import { assetPath } from "@/lib/site-paths";
 
 // Homepage service cards. Edit this array to change the "What We Do" grid.
 const whatWeDo = [
@@ -168,7 +169,7 @@ export default function HomePage() {
             </div>
           </div>
           <Image
-            src="/images/home-hero.png"
+            src={assetPath("/images/home-hero.png")}
             alt="Softzino engineering team working in a modern technology office"
             width={552}
             height={501}
@@ -301,7 +302,7 @@ export default function HomePage() {
                 className="overflow-hidden rounded-card border border-border-light bg-white shadow-card-sm"
               >
                 <Image
-                  src={product.image}
+                  src={assetPath(product.image)}
                   alt={`${product.name} dashboard preview`}
                   width={367}
                   height={160}
@@ -356,14 +357,14 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 items-center gap-5">
             <Image
-              src="/images/team-workshop.png"
+              src={assetPath("/images/team-workshop.png")}
               alt="Softzino team collaborating around a workshop table"
               width={262}
               height={178}
               className="w-full rounded-card object-cover shadow-card-sm"
             />
             <Image
-              src="/images/office-space.png"
+              src={assetPath("/images/office-space.png")}
               alt="Softzino open office workspace"
               width={258}
               height={178}

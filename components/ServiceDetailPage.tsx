@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { getServiceHref } from "@/lib/services-data";
+import { assetPath } from "@/lib/site-paths";
 
 type SummaryItem = {
   title: string;
@@ -133,7 +134,7 @@ function StandardServicePage({ data }: { data: StandardServiceData }) {
 
             <div className="overflow-hidden rounded-card border border-border-lighter bg-white shadow-card-sm">
               <Image
-                src={data.image}
+                src={assetPath(data.image)}
                 alt={data.imageAlt}
                 width={540}
                 height={510}
@@ -214,7 +215,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
             <p className="mt-5 text-sm leading-relaxed text-body-text">{data.ecosystemText}</p>
           </div>
           <Image
-            src={data.ecosystemImage}
+            src={assetPath(data.ecosystemImage)}
             alt="Softzino engineers conducting a technical training session"
             width={560}
             height={410}
@@ -277,7 +278,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
       <section className="bg-black">
         <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-12 px-4 py-16 md:px-16 md:py-24 lg:grid-cols-2">
           <Image
-            src={data.whyImage}
+            src={assetPath(data.whyImage)}
             alt="Modern architectural staircase representing engineering growth"
             width={550}
             height={520}

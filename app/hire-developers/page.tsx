@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import TalentRequestForm from "@/components/TalentRequestForm";
+import { assetPath } from "@/lib/site-paths";
 
 export const metadata: Metadata = {
   title: "Hire Developers | Softzino Technologies",
@@ -150,7 +151,7 @@ export default function HireDevelopersPage() {
 
           <div className="mx-auto mt-12 max-w-4xl rounded-card border border-border-lighter bg-white p-8 shadow-card-sm md:p-12">
             <Image
-              src="/images/hiring-process.png"
+              src={assetPath("/images/hiring-process.png")}
               alt="Professional 4 step process for hiring developers"
               width={803}
               height={425}
