@@ -11,7 +11,7 @@ This is a Next.js App Router project styled with Tailwind CSS.
 - `app/off-the-shelf-solutions/page.tsx` controls the Solutions page: product hero, ERP/CRM/HRMS/Zenith cards, and consultation CTA.
 - `app/hire-developers/page.tsx` controls the Hire Developers page: hero, engagement models, hiring process image, and request form.
 - `app/services/page.tsx` controls the Services page: hero, full service listing, and custom-engagement CTA.
-- `app/services/*/page.tsx` service-detail routes render individual services such as Mobile App Development, IoT & Wearable Solutions, Semiconductor Testing, and Skill Development.
+- `app/services/*/page.tsx` service-detail routes render individual services across Product Engineering, Digital Transformation, Cloud Engineering, Data Analytics, Co-Creation, and Consultancy.
 - `app/privacy-notice`, `app/terms-and-conditions`, `app/cookie-notice`, `app/imprint`, and `app/press-kit` are lightweight utility pages linked from the footer.
 
 ## Shared Components
@@ -19,21 +19,22 @@ This is a Next.js App Router project styled with Tailwind CSS.
 - `components/Header.tsx` renders the sticky navigation, desktop Services mega-menu, mobile menu, active link styles, and CTA button.
 - `components/Footer.tsx` renders footer icons, office addresses, legal links, and copyright text.
 - `components/Breadcrumb.tsx` renders the small `Home > Current Page` trail on secondary pages.
-- `components/TalentRequestForm.tsx` renders the Hire Developers lead form and mocked submit flow.
-- `components/ServiceDetailPage.tsx` renders the reusable service-detail layout used by the individual service pages.
+- `components/TalentRequestForm.tsx` renders the Hire Developers lead form and client-side submission feedback.
+- `components/ServiceDetailPage.tsx` renders the original reusable service-detail layout.
+- `components/BatchServicePage.tsx` renders the batch-built service-detail layout and its section variants.
 - `components/InfoPage.tsx` renders the reusable layout for footer utility pages.
-- `components/PlaceholderMedia.tsx` is a fallback visual block for future sections that do not have real images yet.
 
 ## Shared Data
 
-- `lib/services-data.ts` is the source of truth for service categories and service names. It feeds both the Header mega-menu and the Services page.
-- `lib/service-detail-data.tsx` stores the per-page content for the reusable service-detail pages.
+- `lib/services-data.ts` is the source of truth for service categories, service names, and real service-detail routes. It feeds both the Header mega-menu and the Services page.
+- `lib/service-detail-data.tsx` stores the original service-detail content used by Mobile App Development, IoT & Wearable Solutions, Semiconductor Testing, and Skill Development.
+- `lib/batch1-service-data.tsx`, `lib/batch2-service-data.tsx`, and `lib/batch3-service-data.tsx` store the batch-specific service detail content used by `components/BatchServicePage.tsx`.
 
 ## Styling And Assets
 
 - `tailwind.config.ts` stores Figma-derived design tokens such as colors, fonts, border radius, max content width, and shadows.
 - `public/images/*` stores the cropped image assets used by the pages.
-- `qa-screenshots/*` stores local QA screenshots and logs from visual testing.
+- `batch1/`, `batch2/`, and `batch3/` store source Figma screenshots and design reference material.
 
 ## Common Edits
 

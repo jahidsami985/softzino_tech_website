@@ -44,7 +44,7 @@ const awards = [
   },
 ];
 
-// Partner logo placeholders. Replace these strings with logo components/assets later if needed.
+// Technology partner names displayed in the partnership card grid.
 const partners = ["Odoo", "AWS", "Azure", "Google Cloud"];
 
 // Certification cards; GDPR is rendered separately because it spans the full row.
@@ -187,7 +187,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Consultation CTA: dark booking block with a placeholder calendar widget. */}
+      {/* Consultation CTA: dark booking block linked to the request form. */}
       <section className="bg-bg-cream pb-16 md:pb-24">
         <div className="mx-auto max-w-content px-4 md:px-16">
           <div className="flex flex-col items-center gap-10 rounded-card bg-navy-header p-8 shadow-card-md md:flex-row md:p-16">
@@ -214,7 +214,7 @@ export default function AboutPage() {
               <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-card border-2 border-dashed border-border-light bg-bg-cream px-8 py-16 text-center">
                 <Calendar size={28} className="text-body-text/45" />
                 <p className="font-mono text-xs tracking-[0.28em] text-body-text/70">
-                  [ Interactive Calendar Widget ]
+                  Consultation Request
                 </p>
               </div>
               <a

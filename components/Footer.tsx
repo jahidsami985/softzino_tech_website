@@ -1,40 +1,39 @@
-import Link from "next/link";
 import { Briefcase, Camera, MessageSquare, PlayCircle, Users } from "lucide-react";
+import Link from "next/link";
 
 // Small legal/utility links shown in the very bottom row of the footer.
 const legalLinks = [
   { label: "Privacy Notice", href: "/privacy-notice" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
   { label: "Cookie Notice", href: "/cookie-notice" },
-  { label: "Change Cookie Preferences", href: "#cookie-preferences" },
+  { label: "Change Cookie Preferences", href: "/cookie-notice" },
   { label: "Imprint / Impressum", href: "/imprint" },
   { label: "Press Kit", href: "/press-kit" },
 ];
 
-// Icon-only footer links that match the Figma footer treatment.
-const footerLinks = [
-  { icon: Briefcase, label: "Company", href: "#" },
-  { icon: MessageSquare, label: "Messages", href: "#" },
-  { icon: Users, label: "Community", href: "#" },
-  { icon: Camera, label: "Gallery", href: "#" },
-  { icon: PlayCircle, label: "Video", href: "#" },
+// Icon-only footer marks that match the Figma footer treatment.
+const footerIcons = [
+  { icon: Briefcase, label: "Company" },
+  { icon: MessageSquare, label: "Messages" },
+  { icon: Users, label: "Community" },
+  { icon: Camera, label: "Gallery" },
+  { icon: PlayCircle, label: "Video" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-navy-deep">
       <div className="mx-auto max-w-content px-4 py-12 md:px-16">
-        {/* Top row: social/utility icons. aria-label keeps icon links readable to screen readers. */}
+        {/* Top row: visual footer marks retained from the Figma footer treatment. */}
         <div className="flex items-center gap-6">
-          {footerLinks.map(({ icon: Icon, label, href }) => (
-            <Link
+          {footerIcons.map(({ icon: Icon, label }) => (
+            <span
               key={label}
-              href={href}
-              aria-label={label}
-              className="text-footer-muted transition-colors hover:text-white"
+              title={label}
+              className="text-footer-muted"
             >
               <Icon size={24} strokeWidth={1.8} />
-            </Link>
+            </span>
           ))}
         </div>
 

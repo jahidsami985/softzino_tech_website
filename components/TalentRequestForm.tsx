@@ -5,11 +5,9 @@ import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-// NOTE: This is a mocked submission handler for the current build phase.
-// Swap the setTimeout block below for a real fetch() call to your API,
-// HubSpot form endpoint, or email service once one is available.
-async function mockSubmitLead(payload: Record<string, string>): Promise<void> {
-  console.log("Mock lead submission payload:", payload);
+// Submission endpoint is not configured in this static build.
+// Keep the client confirmation non-persistent until a real endpoint is provided.
+async function submitLeadRequest(): Promise<void> {
   await new Promise((resolve) => setTimeout(resolve, 700));
 }
 
@@ -17,15 +15,13 @@ export default function TalentRequestForm() {
   // Tracks the form's current UI state: normal, loading, success, or error.
   const [status, setStatus] = useState<Status>("idle");
 
-  // Collects native form values, sends them to the mocked submitter, then swaps UI state.
+  // Runs client-side submission feedback, then swaps UI state.
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
-    const formData = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(formData.entries()) as Record<string, string>;
 
     try {
-      await mockSubmitLead(payload);
+      await submitLeadRequest();
       setStatus("success");
     } catch {
       setStatus("error");

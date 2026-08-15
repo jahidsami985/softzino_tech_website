@@ -37,18 +37,3 @@ select:focus-visible {
     scroll-behavior: auto !important;
   }
 }
-
-/* Placeholder gradient/pattern block used in place of real product screenshots */
-.placeholder-media {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(27, 42, 74, 0.08) 0%, rgba(14, 124, 123, 0.14) 100%);
-}
-.placeholder-media::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(27, 42, 74, 0.15) 1px, transparent 0);
-  background-size: 16px 16px;
-  opacity: 0.5;
-}
