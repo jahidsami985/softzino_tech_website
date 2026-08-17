@@ -213,6 +213,10 @@ function Hero({ hero, current }: { hero: HeroData; current: string }) {
   const bgClass = theme === "black" ? "bg-black" : isLight ? "bg-bg-offwhite" : "bg-navy-deep";
   const textClass = isLight ? "text-text-dark" : "text-white";
   const mutedTextClass = isLight ? "text-body-text" : "text-footer-muted";
+  const titleSizeClass =
+    hero.title.length > 80
+      ? "text-[1.625rem] leading-[1.18] sm:text-4xl sm:leading-tight lg:text-6xl"
+      : "text-3xl leading-tight sm:text-4xl lg:text-6xl";
 
   if (layout === "background" && hero.backgroundImage) {
     return (
@@ -232,11 +236,11 @@ function Hero({ hero, current }: { hero: HeroData; current: string }) {
               : "bg-gradient-to-r from-black/85 via-navy-deep/70 to-black/20"
           }`}
         />
-        <div className="relative mx-auto max-w-content px-4 py-20 md:px-16 md:py-28">
+        <div className="relative mx-auto max-w-content px-4 py-16 md:px-8 md:py-24 lg:px-16 lg:py-28">
           {hero.breadcrumb && <MiniBreadcrumb current={current} dark={!isLight} />}
           <div className="min-w-0 max-w-3xl">
             <Eyebrow label={hero.eyebrow} light={isLight} />
-            <h1 className={`mt-8 break-words text-3xl font-bold leading-tight sm:text-4xl md:text-6xl ${textClass}`}>
+            <h1 className={`mt-8 break-words font-bold ${titleSizeClass} ${textClass}`}>
               <HighlightedText text={hero.title} highlight={hero.highlight} />
             </h1>
             {hero.subtitle && (
@@ -254,12 +258,12 @@ function Hero({ hero, current }: { hero: HeroData; current: string }) {
   if (layout === "stacked" && hero.media) {
     return (
       <section className={bgClass}>
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
           {hero.breadcrumb && <MiniBreadcrumb current={current} dark={!isLight} />}
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div className="min-w-0 max-w-3xl">
               <Eyebrow label={hero.eyebrow} light={isLight} />
-              <h1 className={`mt-8 break-words text-3xl font-bold leading-tight sm:text-4xl md:text-6xl ${textClass}`}>
+              <h1 className={`mt-8 break-words font-bold ${titleSizeClass} ${textClass}`}>
                 <HighlightedText text={hero.title} highlight={hero.highlight} />
               </h1>
               {hero.subtitle && (
@@ -288,14 +292,14 @@ function Hero({ hero, current }: { hero: HeroData; current: string }) {
   return (
     <section className={bgClass}>
       <div
-        className={`mx-auto grid max-w-content grid-cols-1 items-center gap-12 px-4 py-16 md:px-16 md:py-24 ${
+        className={`mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:gap-12 lg:px-16 lg:py-24 ${
           hero.media ? "lg:grid-cols-[1fr_0.9fr]" : ""
         }`}
       >
         <div className="min-w-0 max-w-3xl">
           {hero.breadcrumb && <MiniBreadcrumb current={current} dark={!isLight} />}
           <Eyebrow label={hero.eyebrow} light={isLight} />
-          <h1 className={`mt-8 break-words text-3xl font-bold leading-tight sm:text-4xl md:text-6xl ${textClass}`}>
+          <h1 className={`mt-8 break-words font-bold ${titleSizeClass} ${textClass}`}>
             <HighlightedText text={hero.title} highlight={hero.highlight} />
           </h1>
           {hero.subtitle && (
@@ -350,7 +354,7 @@ function OverviewSectionView({ section }: { section: OverviewSection }) {
 
   return (
     <section id={section.id} className={sectionThemeClasses[theme]}>
-      <div className="mx-auto grid max-w-content grid-cols-1 gap-12 px-4 py-16 md:px-16 md:py-24 lg:grid-cols-[0.75fr_1.25fr]">
+      <div className="mx-auto grid max-w-content grid-cols-1 gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 lg:px-16 lg:py-24">
         <div className="min-w-0">
           <Eyebrow label={section.eyebrow} light={!dark} />
           {section.label && (
@@ -360,7 +364,7 @@ function OverviewSectionView({ section }: { section: OverviewSection }) {
           )}
           {section.title && (
             <h2
-              className={`mt-5 text-3xl font-bold leading-tight md:text-5xl ${
+              className={`mt-5 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${
                 dark ? "text-white" : "text-text-dark"
               }`}
             >
@@ -420,11 +424,11 @@ function CardGridSectionView({ section }: { section: CardGridSection }) {
 
   return (
     <section id={section.id} className={sectionThemeClasses[theme]}>
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
         <div className={section.centered ? "mx-auto max-w-3xl text-center" : "min-w-0 max-w-3xl"}>
           <Eyebrow label={section.eyebrow} light={!dark} />
           {section.title && (
-            <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+            <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
               {section.title}
             </h2>
           )}
@@ -461,10 +465,10 @@ function SplitListSectionView({ section }: { section: SplitListSection }) {
 
   return (
     <section id={section.id} className={sectionThemeClasses[theme]}>
-      <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-12 px-4 py-16 md:px-16 md:py-24 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:gap-12 lg:px-16 lg:py-24">
         <div className="min-w-0">
           <Eyebrow label={section.eyebrow} light={!dark} />
-          <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+          <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
             {section.title}
           </h2>
           {section.intro && (
@@ -501,8 +505,8 @@ function SplitListSectionView({ section }: { section: SplitListSection }) {
               className="w-full rounded-card object-cover shadow-card-md"
             />
             {section.image.stat && (
-              <div className="absolute -bottom-8 left-8 rounded-card bg-white p-7 shadow-card-lg">
-                <p className="text-4xl font-bold text-black">{section.image.stat}</p>
+              <div className="mt-4 rounded-card bg-white p-5 shadow-card-lg sm:absolute sm:-bottom-8 sm:left-8 sm:mt-0 sm:p-7">
+                <p className="break-words text-3xl font-bold text-black sm:text-4xl">{section.image.stat}</p>
                 {section.image.statLabel && (
                   <p className="mt-2 font-mono text-xs uppercase tracking-wide text-body-text">
                     {section.image.statLabel}
@@ -525,13 +529,13 @@ function TechIndustrySectionView({ section }: { section: TechIndustrySection }) 
   return (
     <section id={section.id} className={sectionThemeClasses[theme]}>
       <div
-        className={`mx-auto grid max-w-content grid-cols-1 gap-12 px-4 py-16 md:px-16 md:py-24 ${
+        className={`mx-auto grid max-w-content grid-cols-1 gap-10 px-4 py-16 md:px-8 md:py-20 lg:gap-12 lg:px-16 lg:py-24 ${
           section.industries ? "lg:grid-cols-2" : ""
         }`}
       >
         <div className={`min-w-0 ${centered ? "mx-auto max-w-4xl text-center" : ""}`}>
           <Eyebrow label={section.title ? "Tech Stack" : undefined} light={!dark} />
-          <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+          <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
             {section.title ?? "Technologies We Master"}
           </h2>
           {section.intro && (
@@ -543,7 +547,7 @@ function TechIndustrySectionView({ section }: { section: TechIndustrySection }) 
             {section.technologies.map((technology) => (
               <span
                 key={technology}
-                className={`rounded-card border px-5 py-3 text-sm font-medium ${
+                className={`max-w-full break-words rounded-card border px-4 py-3 text-sm font-medium sm:px-5 ${
                   dark
                     ? "border-white/20 bg-white/10 text-white"
                     : "border-border-light bg-white text-text-dark shadow-card-sm"
@@ -564,7 +568,7 @@ function TechIndustrySectionView({ section }: { section: TechIndustrySection }) 
               {section.industries.map(({ icon: Icon, title, desc, meta }) => (
                 <article
                   key={title}
-                  className={`flex items-start justify-between gap-4 border-b pb-4 ${
+                  className={`flex min-w-0 flex-col gap-3 border-b pb-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4 ${
                     dark ? "border-white/10" : "border-border-light"
                   }`}
                 >
@@ -579,7 +583,7 @@ function TechIndustrySectionView({ section }: { section: TechIndustrySection }) 
                       )}
                     </div>
                   </div>
-                  {meta && <p className={`text-sm ${dark ? "text-footer-muted" : "text-placeholder-gray"}`}>{meta}</p>}
+                  {meta && <p className={`break-words text-sm sm:shrink-0 ${dark ? "text-footer-muted" : "text-placeholder-gray"}`}>{meta}</p>}
                 </article>
               ))}
             </div>
@@ -593,12 +597,12 @@ function TechIndustrySectionView({ section }: { section: TechIndustrySection }) 
 function ProcessSectionView({ section }: { section: ProcessSection }) {
   const theme = section.theme ?? "white";
   const dark = theme === "dark" || theme === "black";
-  const gridClass = section.steps.length >= 5 ? "md:grid-cols-5" : "md:grid-cols-4";
+  const gridClass = section.steps.length >= 5 ? "sm:grid-cols-2 lg:grid-cols-5" : "sm:grid-cols-2 lg:grid-cols-4";
 
   return (
     <section id={section.id} className={sectionThemeClasses[theme]}>
-      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-16 md:py-24">
-        <h2 className={`text-3xl font-bold md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16 lg:py-24">
+        <h2 className={`text-3xl font-bold md:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
           {section.title}
         </h2>
         {section.intro && (
@@ -632,12 +636,12 @@ function StatsSectionView({ section }: { section: StatsSection }) {
 
   return (
     <section id={section.id} className={sectionThemeClasses[theme]}>
-      <div className="mx-auto max-w-content px-4 py-12 md:px-16 md:py-16">
+      <div className="mx-auto max-w-content px-4 py-12 md:px-8 md:py-16 lg:px-16">
         {(section.eyebrow || section.title || section.intro) && (
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <Eyebrow label={section.eyebrow} light={!dark} />
             {section.title && (
-              <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+              <h2 className={`mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
                 {section.title}
               </h2>
             )}
@@ -656,7 +660,7 @@ function StatsSectionView({ section }: { section: StatsSection }) {
                 dark ? "border-white/10 bg-white/5" : "border-border-lighter bg-white shadow-card-sm"
               }`}
             >
-              <p className={`break-words text-4xl font-bold md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+              <p className={`break-words text-3xl font-bold sm:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
                 {stat.value}
               </p>
               <p className={`mt-3 font-mono text-xs font-bold uppercase tracking-wide ${dark ? "text-footer-muted" : "text-placeholder-gray"}`}>
@@ -680,8 +684,8 @@ function QuoteSectionView({ section }: { section: QuoteSection }) {
 
   return (
     <section id={section.id} className={bgClass}>
-      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-16 md:py-24">
-        <p className="mx-auto max-w-5xl text-3xl font-bold leading-tight text-white md:text-5xl">
+      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16 lg:py-24">
+        <p className="mx-auto max-w-5xl text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
           &quot;{section.quote}&quot;
         </p>
         {section.attribution && (
@@ -708,14 +712,14 @@ function RelatedSectionView({ section }: { section: RelatedSection }) {
 
   return (
     <section id={section.id} className={bgClass}>
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
         <div
           className={`flex flex-col justify-between gap-4 border-b pb-8 md:flex-row md:items-end ${
             dark ? "border-white/10" : "border-border-light"
           }`}
         >
           <div>
-            <h2 className={`text-3xl font-bold md:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
+            <h2 className={`text-3xl font-bold md:text-4xl lg:text-5xl ${dark ? "text-white" : "text-text-dark"}`}>
               {section.title ?? "Related Services"}
             </h2>
             {section.intro && (
@@ -731,7 +735,7 @@ function RelatedSectionView({ section }: { section: RelatedSection }) {
             View all Services <ArrowRight size={16} />
           </Link>
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {section.services.map((service) => (
             <Link
               key={service.title}
@@ -781,8 +785,8 @@ function CtaSectionView({ section }: { section: CtaSection }) {
 
   return (
     <section id={section.id} className={bgClass}>
-      <div className="mx-auto max-w-content px-4 py-20 text-center md:px-16 md:py-24">
-        <h2 className={`text-3xl font-bold leading-tight md:text-5xl ${isWarm ? "text-text-dark" : "text-white"}`}>
+      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16 lg:py-24">
+        <h2 className={`text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${isWarm ? "text-text-dark" : "text-white"}`}>
           {section.title}
         </h2>
         {section.text && (
@@ -791,7 +795,7 @@ function CtaSectionView({ section }: { section: CtaSection }) {
           </p>
         )}
         <div className="mt-10">
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <ActionButton button={section.button ?? { label: "Schedule a Consultation", variant: "gold" }} />
             {section.secondary && <ActionButton button={section.secondary} />}
           </div>
@@ -844,12 +848,12 @@ function FeatureCard({
 
   return (
     <article
-      className={`relative rounded-card border p-8 shadow-card-sm ${cardClass} ${wideClass} ${
+      className={`relative rounded-card border p-6 shadow-card-sm md:p-8 ${cardClass} ${wideClass} ${
         mosaic ? "min-h-64" : ""
       } min-w-0`}
     >
       {number && (
-        <span className="absolute right-8 top-8 font-mono text-sm text-placeholder-gray/70">{number}</span>
+        <span className="absolute right-6 top-6 font-mono text-sm text-placeholder-gray/70 md:right-8 md:top-8">{number}</span>
       )}
       {Icon && (
         <div className={`flex h-12 w-12 items-center justify-center rounded-sm4 ${badgeToneClasses[tone]}`}>
@@ -904,11 +908,11 @@ function MediaCard({
         width={wide ? 1180 : 650}
         height={wide ? 560 : 480}
         priority
-        className={`${wide ? "aspect-[16/7]" : "aspect-[4/3]"} w-full object-cover`}
+        className={`${wide ? "aspect-[4/3] sm:aspect-[16/7]" : "aspect-[4/3]"} w-full object-cover`}
       />
       {overlayTitle && (
-        <div className="absolute bottom-8 left-8 max-w-xs rounded-card bg-white/95 p-6 shadow-card-md backdrop-blur">
-          <p className="text-2xl font-bold text-black">{overlayTitle}</p>
+        <div className="static max-w-none rounded-none bg-white/95 p-4 shadow-none backdrop-blur sm:absolute sm:bottom-8 sm:left-8 sm:max-w-xs sm:rounded-card sm:p-6 sm:shadow-card-md">
+          <p className="break-words text-xl font-bold text-black sm:text-2xl">{overlayTitle}</p>
           {overlayText && <p className="mt-2 text-sm leading-relaxed text-body-text">{overlayText}</p>}
         </div>
       )}
@@ -948,10 +952,10 @@ function ActionButton({ button }: { button: ButtonData }) {
   return (
     <Link
       href={button.href ?? "/hire-developers#request-talent"}
-      className={`inline-flex items-center justify-center gap-2 rounded-sm4 px-8 py-4 text-sm font-bold uppercase tracking-wide transition-colors ${buttonClasses[variant]}`}
+      className={`inline-flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-sm4 px-5 py-4 text-center text-sm font-bold uppercase tracking-wide transition-colors sm:w-auto sm:px-8 ${buttonClasses[variant]}`}
     >
-      {button.label}
-      <ArrowRight size={16} />
+      <span className="min-w-0 break-words">{button.label}</span>
+      <ArrowRight size={16} className="shrink-0" />
     </Link>
   );
 }
@@ -961,11 +965,11 @@ function Eyebrow({ label, light }: { label?: string; light: boolean }) {
 
   return (
     <p
-      className={`inline-flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.18em] ${
+      className={`inline-flex max-w-full items-center gap-3 break-words font-mono text-xs font-bold uppercase tracking-[0.18em] ${
         light ? "text-teal-primary" : "text-teal-mint"
       }`}
     >
-      <span className={`h-px w-12 ${light ? "bg-teal-mint" : "bg-teal-mint"}`} />
+      <span className={`h-px w-8 shrink-0 sm:w-12 ${light ? "bg-teal-mint" : "bg-teal-mint"}`} />
       {label}
     </p>
   );
@@ -987,7 +991,7 @@ function HighlightedText({ text, highlight }: { text: string; highlight?: string
 
 function MiniBreadcrumb({ current, dark }: { current: string; dark: boolean }) {
   return (
-    <nav className={`mb-12 flex flex-wrap items-center gap-2 font-mono text-xs tracking-wide ${dark ? "text-white/55" : "text-body-text"}`}>
+    <nav className={`mb-10 flex min-w-0 flex-wrap items-center gap-2 font-mono text-xs tracking-wide md:mb-12 ${dark ? "text-white/55" : "text-body-text"}`}>
       <Link href="/" className="hover:text-teal-secondary">
         Home
       </Link>
@@ -996,7 +1000,7 @@ function MiniBreadcrumb({ current, dark }: { current: string; dark: boolean }) {
         Services
       </Link>
       <span>/</span>
-      <span className="font-bold text-teal-mint">{current}</span>
+      <span className="min-w-0 break-words font-bold text-teal-mint">{current}</span>
     </nav>
   );
 }

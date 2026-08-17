@@ -108,7 +108,7 @@ function StandardServicePage({ data }: { data: StandardServiceData }) {
     <>
       {/* Breadcrumb and hero follow the service detail template from the Figma reference. */}
       <section className="bg-bg-offwhite">
-        <div className="mx-auto max-w-content px-4 py-12 md:px-16 md:py-20">
+        <div className="mx-auto max-w-content px-4 py-12 md:px-8 md:py-20 lg:px-16">
           <ServiceBreadcrumb
             category={data.category}
             categoryHref={data.categoryHref}
@@ -116,11 +116,11 @@ function StandardServicePage({ data }: { data: StandardServiceData }) {
           />
 
           <div className="mt-12 grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="max-w-3xl">
-              <p className="inline-flex rounded-sm4 bg-teal-mint/60 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wide text-teal-primary">
+            <div className="min-w-0 max-w-3xl">
+              <p className="inline-flex max-w-full break-words rounded-sm4 bg-teal-mint/60 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wide text-teal-primary">
                 {data.eyebrow}
               </p>
-              <h1 className="mt-6 text-3xl font-bold leading-tight text-navy-deep md:text-5xl">
+              <h1 className="mt-6 break-words text-3xl font-bold leading-tight text-navy-deep md:text-4xl lg:text-5xl">
                 {data.headline}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body-text">
@@ -148,7 +148,7 @@ function StandardServicePage({ data }: { data: StandardServiceData }) {
 
       {/* Summary strip: short service definition, value, outcomes, and target industries. */}
       <section className="border-y border-border-lighter bg-white">
-        <div className="mx-auto grid max-w-content grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:px-16 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-content grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:px-8 lg:grid-cols-4 lg:px-16">
           {data.summary.map((item) => (
             <article key={item.title}>
               <h2 className="text-base font-bold text-navy-deep">{item.title}</h2>
@@ -174,7 +174,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
     <>
       {/* Dark hero from the Skill Development reference. */}
       <section className="bg-black">
-        <div className="mx-auto max-w-content px-4 py-12 md:px-16 md:py-20">
+        <div className="mx-auto max-w-content px-4 py-12 md:px-8 md:py-20 lg:px-16">
           <ServiceBreadcrumb
             category={data.category}
             categoryHref={data.categoryHref}
@@ -182,7 +182,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
             dark
           />
           <div className="mt-16 max-w-2xl">
-            <h1 className="text-3xl font-bold leading-tight text-white md:text-5xl">
+            <h1 className="break-words text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
               {data.headline}
             </h1>
             <p className="mt-6 text-base leading-relaxed text-footer-muted">{data.intro}</p>
@@ -195,7 +195,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
 
       {/* Consultancy-first statement block. */}
       <section className="bg-white">
-        <div className="mx-auto grid max-w-content grid-cols-1 gap-10 px-4 py-16 md:px-16 lg:grid-cols-[0.55fr_1fr]">
+        <div className="mx-auto grid max-w-content grid-cols-1 gap-10 px-4 py-16 md:px-8 lg:grid-cols-[0.55fr_1fr] lg:px-16">
           <p className="font-mono text-xs font-bold uppercase tracking-wide text-body-text">
             The Softzino Approach
           </p>
@@ -207,7 +207,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
 
       {/* Learning ecosystem section with the cropped workshop image. */}
       <section className="bg-bg-offwhite">
-        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-16 md:py-24 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16 lg:py-24">
           <div>
             <h2 className="text-2xl font-bold text-text-dark md:text-3xl">
               {data.ecosystemTitle}
@@ -225,7 +225,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
       </section>
 
       <section className="bg-bg-offwhite">
-        <div className="mx-auto max-w-content px-4 pb-16 text-center md:px-16 md:pb-24">
+        <div className="mx-auto max-w-content px-4 pb-16 text-center md:px-8 md:pb-20 lg:px-16 lg:pb-24">
           <SectionHeading title="Mitigate Technical Obsolescence" />
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-body-text">
             Foster a culture of innovation within your internal teams to secure your competitive
@@ -260,7 +260,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
       />
 
       <section className="bg-border-lighter">
-        <div className="mx-auto grid max-w-content grid-cols-1 gap-8 px-4 py-12 md:px-16 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-content grid-cols-1 gap-8 px-4 py-12 md:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-16">
           <div>
             <h2 className="text-base font-bold text-text-dark">Technologies We Master</h2>
             <p className="mt-3 text-sm leading-relaxed text-body-text">
@@ -276,7 +276,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
       </section>
 
       <section className="bg-black">
-        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-12 px-4 py-16 md:px-16 md:py-24 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:gap-12 lg:px-16 lg:py-24">
           <Image
             src={assetPath(data.whyImage)}
             alt="Modern architectural staircase representing engineering growth"
@@ -308,7 +308,7 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
       <RelatedServicesSection services={data.relatedServices} muted />
 
       <section className="bg-[#2A1D00]">
-        <div className="mx-auto max-w-content px-4 py-20 text-center md:px-16 md:py-24">
+        <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16 lg:py-24">
           <h2 className="text-3xl font-bold text-gold md:text-4xl">{data.ctaTitle}</h2>
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-[#A99043]">
             {data.ctaText}
@@ -316,9 +316,9 @@ function TrainingServicePage({ data }: { data: TrainingServiceData }) {
           <div className="mt-10">
             <Link
               href="/hire-developers#request-talent"
-              className="inline-flex items-center gap-2 rounded-sm4 bg-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-white"
+              className="inline-flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-sm4 bg-black px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white sm:w-auto sm:px-8"
             >
-              Talk to an Expert <ArrowRight size={14} />
+              <span className="min-w-0 break-words">Talk to an Expert</span> <ArrowRight size={14} className="shrink-0" />
             </Link>
           </div>
         </div>
@@ -342,7 +342,7 @@ function ServiceBreadcrumb({
   const currentColor = dark ? "text-white" : "text-navy-deep";
 
   return (
-    <nav className={`flex flex-wrap items-center gap-2 font-mono text-xs tracking-wide ${color}`}>
+    <nav className={`flex min-w-0 flex-wrap items-center gap-2 font-mono text-xs tracking-wide ${color}`}>
       <Link href="/" className="hover:text-teal-secondary">
         Home
       </Link>
@@ -355,7 +355,7 @@ function ServiceBreadcrumb({
         {category}
       </Link>
       <ChevronRight size={12} />
-      <span className={`font-bold ${currentColor}`}>{current}</span>
+      <span className={`min-w-0 break-words font-bold ${currentColor}`}>{current}</span>
     </nav>
   );
 }
@@ -371,7 +371,7 @@ function OfferingsSection({
 }) {
   return (
     <section className="bg-bg-offwhite">
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
         <SectionHeading title={title} />
         {intro && <p className="mt-4 max-w-xl text-sm leading-relaxed text-body-text">{intro}</p>}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -389,11 +389,11 @@ function IconCardView({ card }: { card: IconCard }) {
   const tone = card.tone ?? "navy";
 
   return (
-    <article className="rounded-card border border-border-lighter bg-bg-card-gray p-8 shadow-card-sm">
+    <article className="min-w-0 rounded-card border border-border-lighter bg-bg-card-gray p-6 shadow-card-sm md:p-8">
       <div className={`flex h-10 w-10 items-center justify-center rounded-sm4 ${toneClasses[tone]}`}>
         <Icon size={18} />
       </div>
-      <h3 className="mt-6 text-lg font-bold text-navy-deep">{card.title}</h3>
+      <h3 className="mt-6 break-words text-lg font-bold text-navy-deep">{card.title}</h3>
       {card.desc && <p className="mt-3 text-sm leading-relaxed text-body-text">{card.desc}</p>}
     </article>
   );
@@ -402,7 +402,7 @@ function IconCardView({ card }: { card: IconCard }) {
 function WhyChooseSection({ cards }: { cards: IconCard[] }) {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
         <SectionHeading title="Why Choose Softzino" />
         <div className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
           {cards.map(({ icon: Icon, title }) => (
@@ -426,7 +426,7 @@ function EngagementModelsSection({
 }) {
   return (
     <section className="bg-bg-offwhite">
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
         <SectionHeading title={title} />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {models.map((model) => {
@@ -435,7 +435,7 @@ function EngagementModelsSection({
             return (
               <article
                 key={model.title}
-                className={`rounded-card border border-border-light border-t-4 ${accentClasses[accent]} bg-white p-8 shadow-card-sm`}
+                className={`min-w-0 rounded-card border border-border-light border-t-4 ${accentClasses[accent]} bg-white p-6 shadow-card-sm md:p-8`}
               >
                 <h3 className="text-lg font-bold text-navy-deep">{model.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-body-text">{model.desc}</p>
@@ -459,7 +459,7 @@ function EngagementModelsSection({
 function TechnologiesSection({ technologies }: { technologies: string[] }) {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16 lg:py-24">
         <SectionHeading title="Technologies We Master" />
         <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-4">
           {technologies.map((tech) => (
@@ -473,7 +473,7 @@ function TechnologiesSection({ technologies }: { technologies: string[] }) {
 
 function TechPill({ children }: { children: string }) {
   return (
-    <span className="rounded-full border border-border-light bg-white px-5 py-2 text-sm font-bold text-navy-deep shadow-card-sm">
+    <span className="max-w-full break-words rounded-full border border-border-light bg-white px-4 py-2 text-sm font-bold text-navy-deep shadow-card-sm sm:px-5">
       {children}
     </span>
   );
@@ -490,13 +490,12 @@ function ProcessSection({
 }) {
   return (
     <section className="bg-bg-offwhite">
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
         <SectionHeading title={title} />
-        <div className="mt-12 overflow-x-auto pb-2">
-          <div className="flex min-w-[760px] items-start">
-            {steps.map((step, index) => (
-              <div key={step.title} className="flex flex-1 items-start">
-                <div className="flex w-full flex-col items-center text-center">
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:flex lg:items-start lg:gap-0">
+          {steps.map((step, index) => (
+            <div key={step.title} className="min-w-0 lg:flex lg:flex-1 lg:items-start">
+              <div className="flex w-full flex-col items-center text-center">
                   <div
                     className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold ${
                       darkNumbers ? "bg-black text-white" : "bg-navy-deep text-white"
@@ -510,11 +509,10 @@ function ProcessSection({
                   </p>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="-ml-10 mr-2 mt-5 h-px flex-1 bg-border-light" />
+                  <div className="-ml-10 mr-2 mt-5 hidden h-px flex-1 bg-border-light lg:block" />
                 )}
               </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -530,7 +528,7 @@ function RelatedServicesSection({
 }) {
   return (
     <section className={muted ? "bg-border-lighter" : "bg-white"}>
-      <div className="mx-auto max-w-content px-4 py-16 md:px-16">
+      <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
         <h2 className="text-3xl font-bold text-navy-deep md:text-4xl">Related Services</h2>
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
@@ -552,7 +550,7 @@ function RelatedServicesSection({
 function StandardCta({ title, text }: { title: string; text: string }) {
   return (
     <section className="bg-navy-deep">
-      <div className="mx-auto max-w-content px-4 py-20 text-center md:px-16 md:py-24">
+      <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16 lg:py-24">
         <h2 className="text-3xl font-bold text-white md:text-4xl">{title}</h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-footer-muted">
           {text}
@@ -570,7 +568,7 @@ function PrimaryButton({ children }: { children: string }) {
   return (
     <Link
       href="/hire-developers#request-talent"
-      className="inline-flex justify-center rounded-sm4 bg-navy-deep px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-navy-header"
+      className="inline-flex min-h-12 w-full max-w-full justify-center rounded-sm4 bg-navy-deep px-5 py-4 text-center text-sm font-bold text-white transition-colors hover:bg-navy-header sm:w-auto sm:px-8"
     >
       {children}
     </Link>
@@ -581,7 +579,7 @@ function SecondaryButton({ children }: { children: string }) {
   return (
     <Link
       href="/hire-developers#request-talent"
-      className="inline-flex justify-center rounded-sm4 border border-teal-secondary px-8 py-4 text-sm font-bold text-teal-secondary transition-colors hover:bg-teal-secondary/5"
+      className="inline-flex min-h-12 w-full max-w-full justify-center rounded-sm4 border border-teal-secondary px-5 py-4 text-center text-sm font-bold text-teal-secondary transition-colors hover:bg-teal-secondary/5 sm:w-auto sm:px-8"
     >
       {children}
     </Link>
@@ -592,7 +590,7 @@ function GoldButton({ children }: { children: string }) {
   return (
     <Link
       href="/hire-developers#request-talent"
-      className="inline-flex justify-center rounded-sm4 bg-[#F5CF74] px-8 py-4 text-sm font-bold text-navy-deep transition-colors hover:bg-[#FFD978]"
+      className="inline-flex min-h-12 w-full max-w-full justify-center rounded-sm4 bg-[#F5CF74] px-5 py-4 text-center text-sm font-bold text-navy-deep transition-colors hover:bg-[#FFD978] sm:w-auto sm:px-8"
     >
       {children}
     </Link>
@@ -603,7 +601,7 @@ function SecondaryDarkButton({ children }: { children: string }) {
   return (
     <Link
       href="/hire-developers#request-talent"
-      className="inline-flex justify-center rounded-sm4 border border-footer-muted px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-white/10"
+      className="inline-flex min-h-12 w-full max-w-full justify-center rounded-sm4 border border-footer-muted px-5 py-4 text-center text-sm font-bold text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8"
     >
       {children}
     </Link>

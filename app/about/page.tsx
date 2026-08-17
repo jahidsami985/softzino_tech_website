@@ -72,14 +72,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Breadcrumb keeps secondary pages connected back to Home. */}
-      <div className="mx-auto max-w-content px-4 pt-8 md:px-16">
+      <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
         <Breadcrumb current="About Us" />
       </div>
 
       {/* Hero: mission statement and top-level company stats. */}
       <section className="bg-bg-cream">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
-          <h1 className="max-w-4xl text-3xl font-bold leading-tight text-navy-deep md:text-5xl">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
+          <h1 className="max-w-4xl break-words text-3xl font-bold leading-tight text-navy-deep md:text-4xl lg:text-5xl">
             Empowering Global Enterprises Through Intelligent Software Engineering
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body-text">
@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="mt-10 flex flex-wrap gap-x-16 gap-y-8 border-t border-border-light pt-8">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <p className="text-4xl font-bold text-gold md:text-5xl">{stat.value}</p>
+                <p className="text-4xl font-bold text-gold lg:text-5xl">{stat.value}</p>
                 <p className="mt-3 font-mono text-xs uppercase tracking-wide text-body-text">
                   {stat.label}
                 </p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
       {/* Recognition: award cards generated from the awards array above. */}
       <section className="border-t border-border-light bg-bg-cream">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
           <p className="font-mono text-xs uppercase tracking-wide text-gold">
             {"// Recognition"}
           </p>
@@ -112,14 +112,14 @@ export default function AboutPage() {
             Industry Recognition &amp; Awards
           </h2>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {awards.map(({ icon: Icon, title, desc }) => (
               <article
                 key={title}
-                className="rounded-card border border-border-lighter bg-white p-8 shadow-card-sm"
+                className="min-w-0 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm md:p-8"
               >
                 <Icon size={28} className="text-teal-secondary" />
-                <h3 className="mt-4 text-xl font-bold text-navy-deep">{title}</h3>
+                <h3 className="mt-4 break-words text-xl font-bold text-navy-deep">{title}</h3>
                 <p className="mt-2 text-body-text">{desc}</p>
               </article>
             ))}
@@ -129,7 +129,7 @@ export default function AboutPage() {
 
       {/* Partnerships: simple partner tiles matching the Figma card layout. */}
       <section className="bg-bg-cream">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
           <p className="font-mono text-xs uppercase tracking-wide text-gold">
             {"// Partnerships"}
           </p>
@@ -137,13 +137,13 @@ export default function AboutPage() {
             Strategic Technology Partnerships
           </h2>
 
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
             {partners.map((name) => (
               <div
                 key={name}
-                className="flex h-40 items-center justify-center rounded-card border border-border-lighter bg-white text-center shadow-card-sm"
+                className="flex h-32 min-w-0 items-center justify-center rounded-card border border-border-lighter bg-white px-3 text-center shadow-card-sm sm:h-40"
               >
-                <span className="text-2xl font-bold text-navy-deep">{name}</span>
+                <span className="break-words text-xl font-bold text-navy-deep sm:text-2xl">{name}</span>
               </div>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
       {/* Compliance: certifications plus the full-width GDPR standard card. */}
       <section className="bg-bg-cream">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
           <p className="font-mono text-xs uppercase tracking-wide text-gold">
             {"// Compliance"}
           </p>
@@ -164,20 +164,20 @@ export default function AboutPage() {
             {certifications.map(({ icon: Icon, title, desc }) => (
               <article
                 key={title}
-                className="flex gap-6 rounded-card border border-border-lighter bg-white p-8 shadow-card-sm"
+                className="flex min-w-0 flex-col gap-4 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm sm:flex-row sm:gap-6 md:p-8"
               >
                 <Icon size={28} className="shrink-0 text-gold" />
                 <div>
-                  <h3 className="text-xl font-bold text-navy-deep">{title}</h3>
+                  <h3 className="break-words text-xl font-bold text-navy-deep">{title}</h3>
                   <p className="mt-2 text-body-text">{desc}</p>
                 </div>
               </article>
             ))}
           </div>
-          <article className="mt-6 flex gap-6 rounded-card border border-border-lighter bg-white p-8 shadow-card-sm">
+          <article className="mt-6 flex min-w-0 flex-col gap-4 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm sm:flex-row sm:gap-6 md:p-8">
             <Scale size={28} className="shrink-0 text-gold" />
             <div>
-              <h3 className="text-xl font-bold text-navy-deep">GDPR Compliant</h3>
+              <h3 className="break-words text-xl font-bold text-navy-deep">GDPR Compliant</h3>
               <p className="mt-2 text-body-text">
                 Strict adherence to global data protection regulations, ensuring privacy by design
                 and default in all our software architectures.
@@ -189,9 +189,9 @@ export default function AboutPage() {
 
       {/* Consultation CTA: dark booking block linked to the request form. */}
       <section className="bg-bg-cream pb-16 md:pb-24">
-        <div className="mx-auto max-w-content px-4 md:px-16">
-          <div className="flex flex-col items-center gap-10 rounded-card bg-navy-header p-8 shadow-card-md md:flex-row md:p-16">
-            <div>
+        <div className="mx-auto max-w-content px-4 md:px-8 lg:px-16">
+          <div className="flex flex-col items-center gap-10 rounded-card bg-navy-header p-6 shadow-card-md sm:p-8 md:p-12 lg:flex-row lg:p-16">
+            <div className="min-w-0">
               <p className="font-mono text-xs uppercase tracking-wide text-gold">
                 {"// Consultation"}
               </p>
@@ -202,16 +202,16 @@ export default function AboutPage() {
               </p>
               <ul className="mt-6 flex flex-col gap-4">
                 {consultationItems.map((item) => (
-                  <li key={item} className="flex items-center gap-4 text-base text-[#8392B7]">
+                  <li key={item} className="flex min-w-0 items-start gap-4 text-base text-[#8392B7]">
                     <CheckCircle2 size={18} className="shrink-0 text-gold" />
-                    {item}
+                    <span className="min-w-0 break-words">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="w-full max-w-md rounded-card border border-border-lighter bg-white p-8 shadow-card-lg">
-              <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-card border-2 border-dashed border-border-light bg-bg-cream px-8 py-16 text-center">
+            <div className="w-full max-w-md rounded-card border border-border-lighter bg-white p-5 shadow-card-lg sm:p-8">
+              <div className="flex min-h-[180px] flex-col items-center justify-center gap-4 rounded-card border-2 border-dashed border-border-light bg-bg-cream px-4 py-12 text-center sm:min-h-[220px] sm:px-8 sm:py-16">
                 <Calendar size={28} className="text-body-text/45" />
                 <p className="font-mono text-xs tracking-[0.28em] text-body-text/70">
                   Consultation Request
@@ -219,7 +219,7 @@ export default function AboutPage() {
               </div>
               <a
                 href="/hire-developers#request-talent"
-                className="mt-8 flex items-center justify-center gap-2 rounded-sm4 bg-teal-secondary px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-teal-primary"
+                className="mt-8 flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-sm4 bg-teal-secondary px-5 py-4 text-center text-sm font-semibold text-white transition-colors hover:bg-teal-primary sm:px-8"
               >
                 Confirm Booking <ArrowRight size={16} />
               </a>

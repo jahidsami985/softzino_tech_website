@@ -144,7 +144,7 @@ export default function HomePage() {
     <>
       {/* Hero: primary headline, two CTAs, and the main engineering-office image. */}
       <section className="bg-bg-cream">
-        <div className="mx-auto grid min-w-0 max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-16 md:py-24 lg:grid-cols-2">
+        <div className="mx-auto grid min-w-0 max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16 lg:py-24">
           <div className="flex min-w-0 max-w-xl flex-col gap-6">
             <h1 className="max-w-full text-3xl font-bold leading-tight text-navy-deep [overflow-wrap:anywhere] md:text-4xl">
               Engineering Digital Products That Drive Business Growth
@@ -156,13 +156,13 @@ export default function HomePage() {
             <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Link
                 href="/hire-developers#request-talent"
-                className="inline-flex justify-center rounded-2xl bg-teal-primary px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal-secondary"
+                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-2xl bg-teal-primary px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal-secondary sm:w-auto sm:px-8"
               >
                 Contact Us
               </Link>
               <Link
                 href="/services"
-                className="inline-flex justify-center rounded-2xl border-2 border-teal-primary px-8 py-4 text-sm font-bold uppercase tracking-wide text-teal-primary transition-colors hover:bg-teal-primary/5"
+                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-2xl border-2 border-teal-primary px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-teal-primary transition-colors hover:bg-teal-primary/5 sm:w-auto sm:px-8"
               >
                 Explore Services
               </Link>
@@ -181,7 +181,7 @@ export default function HomePage() {
 
       {/* Trust bar: quick credibility metrics immediately below the hero. */}
       <section className="border-y border-border-lighter bg-white">
-        <div className="mx-auto grid max-w-content grid-cols-2 items-center justify-center gap-x-6 gap-y-5 px-4 py-8 sm:flex sm:flex-wrap sm:gap-x-10 sm:gap-y-4 md:px-16">
+        <div className="mx-auto grid max-w-content grid-cols-2 items-center justify-center gap-x-6 gap-y-5 px-4 py-8 sm:flex sm:flex-wrap sm:gap-x-10 sm:gap-y-4 md:px-8 lg:px-16">
           {trustMetrics.map(({ icon: Icon, value, label, tone }) => (
             <div key={label} className="flex min-w-0 items-center gap-2 text-sm font-medium text-navy-deep">
               <Icon size={18} className={tone} />
@@ -198,7 +198,7 @@ export default function HomePage() {
 
       {/* What We Do: service cards generated from the whatWeDo array above. */}
       <section className="bg-bg-warm-gray">
-        <div className="mx-auto max-w-content px-4 py-20 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">What We Do</h2>
             <p className="mt-3 text-body-text">
@@ -209,12 +209,12 @@ export default function HomePage() {
             {whatWeDo.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="rounded-card border border-border-lighter bg-white p-8 shadow-card-sm"
+                className="min-w-0 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm md:p-8"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-card bg-bg-warm-gray">
                   <Icon size={22} className="text-teal-secondary" />
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-navy-deep">{title}</h3>
+                <h3 className="mt-4 break-words text-lg font-bold text-navy-deep">{title}</h3>
                 <p className="mt-4 text-base leading-relaxed text-body-text">{desc}</p>
                 <Link
                   href="/services"
@@ -230,14 +230,14 @@ export default function HomePage() {
 
       {/* Why Choose: value props generated from the whyChoose array above. */}
       <section className="bg-white">
-        <div className="mx-auto max-w-content px-4 py-20 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">Why Choose Softzino</h2>
             <p className="mt-3 text-body-text">
               Delivering excellence through our core principles.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
             {whyChoose.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex items-start gap-4">
                 <Icon size={24} className="mt-1 shrink-0 text-teal-secondary" />
@@ -251,25 +251,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Engineering process: horizontally scrollable on small screens to preserve spacing. */}
+      {/* Engineering process: grid on compact screens, connected row on desktop. */}
       <section className="bg-navy-header">
-        <div className="mx-auto max-w-content px-4 py-20 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-white md:text-3xl">Our Engineering Process</h2>
             <p className="mt-3 text-white/70">
               A proven methodology to deliver successful digital products.
             </p>
           </div>
-          <div className="mt-12 flex items-start justify-between overflow-x-auto pb-2">
+          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:flex lg:items-start lg:justify-between lg:gap-0">
             {process.map(({ icon: Icon, label }, index) => (
-              <div key={label} className="flex min-w-[150px] flex-1 items-center">
+              <div key={label} className="flex min-w-0 items-center justify-center lg:flex-1">
                 <div className="flex flex-col items-center gap-5">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-teal-secondary">
                     <Icon size={22} className="text-white" />
                   </div>
-                  <span className="text-sm font-bold text-white">{label}</span>
+                  <span className="break-words text-center text-sm font-bold text-white">{label}</span>
                 </div>
-                {index < process.length - 1 && <div className="mx-1 mt-7 h-px flex-1 bg-white/25" />}
+                {index < process.length - 1 && (
+                  <div className="mx-1 mt-7 hidden h-px flex-1 bg-white/25 lg:block" />
+                )}
               </div>
             ))}
           </div>
@@ -278,7 +280,7 @@ export default function HomePage() {
 
       {/* Product teaser cards: links visitors to the full off-the-shelf solutions page. */}
       <section className="bg-bg-offwhite">
-        <div className="mx-auto max-w-content px-4 py-20 md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="font-mono text-xs uppercase tracking-wide text-teal-primary">
@@ -295,7 +297,7 @@ export default function HomePage() {
               View All Solutions <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
               <div
                 key={product.name}
@@ -308,8 +310,8 @@ export default function HomePage() {
                   height={160}
                   className="h-40 w-full object-cover"
                 />
-                <div className="p-8">
-                  <h3 className="text-lg font-medium text-navy-deep">{product.name}</h3>
+                <div className="p-6 md:p-8">
+                  <h3 className="break-words text-lg font-medium text-navy-deep">{product.name}</h3>
                   <p className="mt-2 min-h-[72px] text-sm leading-relaxed text-body-text">
                     {product.desc}
                   </p>
@@ -328,7 +330,7 @@ export default function HomePage() {
 
       {/* About preview: short company intro plus two supporting photos. */}
       <section className="bg-white">
-        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-20 md:px-16 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-wide text-gold">About Softzino</p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-body-text">
@@ -350,7 +352,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/about"
-              className="mt-8 inline-flex h-12 items-center rounded-2xl border border-navy-deep px-7 text-sm font-bold uppercase tracking-wide text-navy-deep transition-colors hover:bg-navy-deep hover:text-white"
+              className="mt-8 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl border border-navy-deep px-5 text-center text-sm font-bold uppercase tracking-wide text-navy-deep transition-colors hover:bg-navy-deep hover:text-white sm:w-auto sm:px-7"
             >
               Learn About Us
             </Link>
@@ -376,7 +378,7 @@ export default function HomePage() {
 
       {/* Hiring CTA: promotes the dedicated Hire Developers route. */}
       <section className="bg-teal-primary">
-        <div className="mx-auto max-w-content px-4 py-20 text-center md:px-16">
+        <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16">
           <h2 className="text-2xl font-bold text-white md:text-3xl">
             Scale Your Engineering Team Faster
           </h2>
@@ -386,7 +388,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/hire-developers"
-            className="mt-6 inline-flex rounded-2xl bg-navy-header px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-deep"
+            className="mt-6 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl bg-navy-header px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-deep sm:w-auto sm:px-8"
           >
             Hire Developers
           </Link>
@@ -395,24 +397,24 @@ export default function HomePage() {
 
       {/* Final CTA: wraps the homepage with consultation and contact actions. */}
       <section className="bg-bg-warm-gray">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-card border border-border-light bg-white p-10 text-center shadow-card-sm">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-card border border-border-light bg-white p-6 text-center shadow-card-sm sm:p-8 md:p-10">
             <h2 className="text-xl font-bold text-navy-deep md:text-2xl">
               Ready to Build Your Next Digital Product?
             </h2>
             <p className="text-base text-body-text">
               Let&apos;s discuss how Softzino can accelerate your digital initiatives.
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-4">
+            <div className="mt-4 flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row sm:flex-wrap">
               <Link
                 href="/hire-developers#request-talent"
-                className="rounded-2xl bg-navy-header px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-deep"
+                className="inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl bg-navy-header px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-deep sm:w-auto sm:px-6"
               >
                 Schedule a Consultation
               </Link>
               <Link
                 href="/hire-developers#request-talent"
-                className="rounded-2xl border border-navy-deep px-6 py-3 text-sm font-bold uppercase tracking-wide text-navy-deep transition-colors hover:bg-navy-deep hover:text-white"
+                className="inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl border border-navy-deep px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-navy-deep transition-colors hover:bg-navy-deep hover:text-white sm:w-auto sm:px-6"
               >
                 Contact Us
               </Link>

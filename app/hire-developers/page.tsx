@@ -47,18 +47,18 @@ export default function HireDevelopersPage() {
   return (
     <>
       {/* Breadcrumb keeps this secondary page connected to Home. */}
-      <div className="mx-auto max-w-content px-4 pt-8 md:px-16">
+      <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
         <Breadcrumb current="Hire Developers" />
       </div>
 
       {/* Hero: talent augmentation pitch, CTAs, and the abstract icon panel. */}
       <section className="bg-bg-cream">
-        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-12 md:px-16 md:py-20 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
-            <span className="inline-flex w-fit rounded-full bg-[#F0EDED] px-4 py-2 font-mono text-xs uppercase tracking-wide text-navy-deep">
+        <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-12 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16">
+          <div className="flex min-w-0 flex-col gap-6">
+            <span className="inline-flex max-w-full break-words rounded-full bg-[#F0EDED] px-4 py-2 font-mono text-xs uppercase tracking-wide text-navy-deep">
               Talent Augmentation
             </span>
-            <h1 className="max-w-2xl text-3xl font-bold leading-tight text-navy-deep md:text-5xl">
+            <h1 className="max-w-2xl break-words text-3xl font-bold leading-tight text-navy-deep md:text-4xl lg:text-5xl">
               Scale Your Engineering Team in Days, Not Months.
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-body-text">
@@ -69,21 +69,21 @@ export default function HireDevelopersPage() {
             <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a
                 href="#request-talent"
-                className="inline-flex justify-center rounded-sm4 bg-teal-secondary px-8 py-4 text-base text-white transition-colors hover:bg-teal-primary"
+                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-sm4 bg-teal-secondary px-5 py-4 text-center text-base text-white transition-colors hover:bg-teal-primary sm:w-auto sm:px-8"
               >
                 Hire Talent Now
               </a>
               <a
                 href="#process"
-                className="inline-flex justify-center rounded-sm4 border border-teal-secondary px-8 py-4 text-base text-teal-secondary transition-colors hover:bg-teal-secondary/5"
+                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-sm4 border border-teal-secondary px-5 py-4 text-center text-base text-teal-secondary transition-colors hover:bg-teal-secondary/5 sm:w-auto sm:px-8"
               >
                 See Our Process
               </a>
             </div>
           </div>
 
-          <div className="flex aspect-[4/3] items-center justify-center rounded-card border border-border-lighter bg-[#F0F7F7] p-8 shadow-card-sm">
-            <div className="grid grid-cols-3 gap-4">
+          <div className="flex aspect-[4/3] items-center justify-center rounded-card border border-border-lighter bg-[#F0F7F7] p-5 shadow-card-sm sm:p-6 md:p-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
               <IconTile icon={Code2} />
               <IconTile icon={Rocket} active />
               <IconTile icon={Database} />
@@ -97,7 +97,7 @@ export default function HireDevelopersPage() {
 
       {/* Engagement models: cards generated from the engagementModels array above. */}
       <section className="border-y border-border-light bg-bg-warm-gray">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">
               Flexible Engagement Models
@@ -111,23 +111,23 @@ export default function HireDevelopersPage() {
             {engagementModels.map(({ icon: Icon, title, desc, features }) => (
               <article
                 key={title}
-                className="relative overflow-hidden rounded-card border border-border-lighter bg-white p-10 shadow-card-sm"
+                className="relative min-w-0 overflow-hidden rounded-card border border-border-lighter bg-white p-6 shadow-card-sm md:p-8 lg:p-10"
               >
                 <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-bg-warm-gray" />
                 <div className="relative">
                   <div className="flex h-14 w-14 items-center justify-center rounded-card bg-navy-deep">
                     <Icon size={24} className="text-white" />
                   </div>
-                  <h3 className="mt-6 text-2xl font-bold text-navy-deep">{title}</h3>
+                  <h3 className="mt-6 break-words text-2xl font-bold text-navy-deep">{title}</h3>
                   <p className="mt-4 text-body-text">{desc}</p>
                   <ul className="mt-6 flex flex-col gap-3">
                     {features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-text-dark">
+                      <li key={feature} className="flex min-w-0 items-start gap-3 text-text-dark">
                         <CheckCircle2
                           size={20}
                           className="mt-1 shrink-0 text-teal-secondary"
                         />
-                        {feature}
+                        <span className="min-w-0 break-words">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -140,7 +140,7 @@ export default function HireDevelopersPage() {
 
       {/* Process: uses the Figma-derived hiring-process image as the central visual. */}
       <section id="process" className="bg-bg-cream">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">The Softzino Process</h2>
             <p className="mt-3 text-body-text">
@@ -149,7 +149,7 @@ export default function HireDevelopersPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-4xl rounded-card border border-border-lighter bg-white p-8 shadow-card-sm md:p-12">
+          <div className="mx-auto mt-12 max-w-4xl rounded-card border border-border-lighter bg-white p-4 shadow-card-sm sm:p-6 md:p-12">
             <Image
               src={assetPath("/images/hiring-process.png")}
               alt="Professional 4 step process for hiring developers"
@@ -163,7 +163,7 @@ export default function HireDevelopersPage() {
 
       {/* Request form: client component that mocks lead capture for now. */}
       <section id="request-talent" className="border-t border-border-light bg-bg-warm-gray">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-2xl">
             <TalentRequestForm />
           </div>
@@ -183,7 +183,7 @@ function IconTile({
 }) {
   return (
     <div
-      className={`flex h-24 w-24 items-center justify-center rounded-card shadow-card-sm ${
+      className={`flex h-16 w-16 items-center justify-center rounded-card shadow-card-sm sm:h-20 sm:w-20 md:h-24 md:w-24 ${
         active ? "bg-teal-secondary" : "border border-border-lighter bg-white"
       }`}
     >

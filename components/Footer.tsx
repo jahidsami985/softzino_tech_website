@@ -23,9 +23,9 @@ const footerIcons = [
 export default function Footer() {
   return (
     <footer className="bg-navy-deep">
-      <div className="mx-auto max-w-content px-4 py-12 md:px-16">
+      <div className="mx-auto max-w-content px-4 py-12 md:px-8 lg:px-16">
         {/* Top row: visual footer marks retained from the Figma footer treatment. */}
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-5 sm:gap-6">
           {footerIcons.map(({ icon: Icon, label }) => (
             <span
               key={label}
@@ -57,12 +57,12 @@ export default function Footer() {
 
         {/* Bottom row: legal links and copyright text. */}
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <nav className="flex flex-wrap gap-x-6 gap-y-3">
+          <nav className="flex min-w-0 flex-wrap gap-x-6 gap-y-3">
             {legalLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="font-mono text-xs tracking-wide text-footer-muted transition-colors hover:text-white"
+                className="max-w-full break-words font-mono text-xs tracking-wide text-footer-muted transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
