@@ -23,6 +23,7 @@ import {
   Users2,
   ClipboardList,
 } from "lucide-react";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { assetPath } from "@/lib/site-paths";
 
 // Homepage service cards. Edit this array to change the "What We Do" grid.
@@ -144,9 +145,9 @@ export default function HomePage() {
     <>
       {/* Hero: primary headline, two CTAs, and the main engineering-office image. */}
       <section className="bg-bg-cream">
-        <div className="mx-auto grid min-w-0 max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16 lg:py-24">
-          <div className="flex min-w-0 max-w-xl flex-col gap-6">
-            <h1 className="max-w-full text-3xl font-bold leading-tight text-navy-deep [overflow-wrap:anywhere] md:text-4xl">
+        <div className="mx-auto grid w-full min-w-0 max-w-content grid-cols-1 items-center gap-10 overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16 lg:py-24">
+          <div className="flex w-full min-w-0 max-w-xl flex-col gap-6">
+            <h1 className="max-w-full text-2xl font-bold leading-tight text-navy-deep [overflow-wrap:anywhere] sm:text-3xl md:text-4xl">
               Engineering Digital Products That Drive Business Growth
             </h1>
             <p className="text-lg leading-relaxed text-body-text">
@@ -168,14 +169,16 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <Image
-            src={assetPath("/img1/homepage-banner.jpeg")}
-            alt="Softzino Technologies office building"
-            width={552}
-            height={501}
-            priority
-            className="aspect-[4/3] w-full rounded-card object-cover object-top shadow-card-sm"
-          />
+          <div className="min-w-0 max-w-full overflow-hidden rounded-card shadow-card-sm">
+            <Image
+              src={assetPath("/img1/homepage-banner.jpeg")}
+              alt="Softzino Technologies office building"
+              width={552}
+              height={501}
+              priority
+              className="aspect-[4/3] w-full object-cover object-top"
+            />
+          </div>
         </div>
       </section>
 
@@ -250,6 +253,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       {/* Engineering process: grid on compact screens, connected row on desktop. */}
       <section className="bg-navy-header">

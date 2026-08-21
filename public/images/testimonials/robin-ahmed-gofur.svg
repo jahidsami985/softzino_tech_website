@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Robin Ahmed Gofur avatar fallback</title>
+  <desc id="desc">Temporary client avatar with initials RAG.</desc>
+  <defs>
+    <linearGradient id="g" x1="24" x2="176" y1="18" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8F6F5"/>
+      <stop offset=".52" stop-color="#0E7C7B"/>
+      <stop offset="1" stop-color="#14213D"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#g)"/>
+  <circle cx="100" cy="78" r="38" fill="#FFFFFF" opacity=".92"/>
+  <path d="M40 178c8-39 34-61 60-61s52 22 60 61" fill="#F2C94C" opacity=".9"/>
+  <text x="100" y="113" text-anchor="middle" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">RAG</text>
+</svg>

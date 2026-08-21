@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import {
   ArrowRight,
-  Award,
   Calendar,
   CheckCircle2,
   ClipboardCheck,
-  Globe2,
   Scale,
   ShieldCheck,
-  Trophy,
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import RecognitionSection from "@/components/about/RecognitionSection";
 
 export const metadata: Metadata = {
   title: "About Us | Softzino Technologies",
@@ -23,25 +21,6 @@ const stats = [
   { value: "10+", label: "Years of Excellence" },
   { value: "100+", label: "Enterprise Projects" },
   { value: "5.0", label: "Clutch Rating" },
-];
-
-// Award cards shown in the Recognition section.
-const awards = [
-  {
-    icon: Trophy,
-    title: "Tech Innovator Award 2023",
-    desc: "Recognized for outstanding contributions to enterprise cloud architecture and digital transformation.",
-  },
-  {
-    icon: Award,
-    title: "Top B2B Service Provider",
-    desc: "Voted a top partner for mission-critical software development by leading industry analysts.",
-  },
-  {
-    icon: Globe2,
-    title: "Global Excellence in IT",
-    desc: "Awarded for consistent delivery of secure, compliant, and highly available systems worldwide.",
-  },
 ];
 
 // Technology partner names displayed in the partnership card grid.
@@ -102,30 +81,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Recognition: award cards generated from the awards array above. */}
-      <section className="border-t border-border-light bg-bg-cream">
-        <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
-          <p className="font-mono text-xs uppercase tracking-wide text-gold">
-            {"// Recognition"}
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-navy-deep md:text-3xl">
-            Industry Recognition &amp; Awards
-          </h2>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {awards.map(({ icon: Icon, title, desc }) => (
-              <article
-                key={title}
-                className="min-w-0 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm md:p-8"
-              >
-                <Icon size={28} className="text-teal-secondary" />
-                <h3 className="mt-4 break-words text-xl font-bold text-navy-deep">{title}</h3>
-                <p className="mt-2 text-body-text">{desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RecognitionSection />
 
       {/* Partnerships: simple partner tiles matching the Figma card layout. */}
       <section className="bg-bg-cream">

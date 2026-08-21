@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120" role="img" aria-labelledby="title desc">
+  <title id="title">ISO 27001 fallback logo</title>
+  <desc id="desc">Temporary ISO 27001 certification mark for Softzino Technologies.</desc>
+  <rect width="240" height="120" rx="16" fill="#F7FBFB"/>
+  <path d="M60 22l36 18v29c0 23-15 39-36 47-21-8-36-24-36-47V40l36-18z" fill="#0E7C7B"/>
+  <path d="M45 65l11 11 22-26" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="112" y="51" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">ISO</text>
+  <text x="112" y="78" fill="#0E7C7B" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">27001</text>
+</svg>
