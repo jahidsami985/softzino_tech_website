@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120" role="img" aria-labelledby="title desc">
+  <title id="title">BASIS fallback logo</title>
+  <desc id="desc">Temporary BASIS recognition mark for Softzino Technologies.</desc>
+  <rect width="240" height="120" rx="16" fill="#F7FBFB"/>
+  <rect x="22" y="24" width="48" height="72" rx="12" fill="#0E7C7B"/>
+  <circle cx="46" cy="48" r="10" fill="#F2C94C"/>
+  <path d="M36 73h20M36 83h28" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <text x="86" y="56" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">BASIS</text>
+  <text x="88" y="78" fill="#0E7C7B" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">MEMBER</text>
+</svg>

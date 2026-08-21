@@ -15,15 +15,15 @@ export default function PressKitPage() {
       sections={[
         {
           title: "Company Overview",
-          body: "Softzino Technologies builds custom software, cloud, data, product engineering, and technical talent solutions for global organizations.",
+          body: "Softzino Technologies is a Bangladesh-based software development company founded in 2015 with a diverse team of 100+ skilled professionals.",
         },
         {
           title: "Service Areas",
-          body: "Core capabilities include product engineering, digital transformation, cloud engineering, data analytics, consultancy, and co-creation teams.",
+          body: "Core capabilities include custom software development, web and mobile app development, WordPress development, UI/UX design, QA and testing, and enterprise solutions such as ERP and POS systems.",
         },
         {
           title: "Office Locations",
-          body: "Softzino operates with office presence in Singapore and Dhaka, supporting clients across global delivery models.",
+          body: "Softzino lists offices in Bangladesh, Singapore, the USA, and Australia, and serves clients across the USA, Denmark, Japan, and Malaysia.",
         },
         {
           title: "Media Requests",

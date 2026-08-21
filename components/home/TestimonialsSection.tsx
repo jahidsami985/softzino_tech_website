@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     name: "A S M Asaduzzaman",
     role: "CEO, Spin Off Studios",
     quote:
-      "Softzino Technologies makes my life easier always for any size of project. I trust its team's professionalism in every step.",
+      "Softzino Technologies makes my life easier for projects of any size. I trust its team's professionalism in every step.",
     avatar: "/images/testimonials/asm-asaduzzaman.svg",
     sizeClass: "h-16 w-16 sm:h-20 sm:w-20 md:h-40 md:w-40",
     positionClass: "md:left-1/2 md:top-0 md:-translate-x-1/2",
@@ -29,9 +29,9 @@ const testimonials: Testimonial[] = [
   {
     id: "kamrul-hasan",
     name: "Kamrul Hasan",
-    role: "CEO, Japan Style Ltd (German Butcher)",
+    role: "CEO, Japan Style Limited (German Butcher)",
     quote:
-      "Softzino Technologies has exceeded our expectations with their exceptional software development and services. Their team's expertise and dedication ensured that our project was delivered on time and met all our requirements. The quality of their work and their attention to detail were outstanding. Their customer service was always prompt and helpful, making the entire process smooth and efficient. We highly recommend Softzino Technologies.",
+      "Softzino Technologies exceeded our expectations with timely delivery, an expert team, and high-quality work. Their attention to detail and excellent customer service made the entire process smooth. Highly recommended for top-tier software development.",
     avatar: "/images/testimonials/kamrul-hasan.svg",
     sizeClass: "h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28",
     positionClass: "md:left-[6%] md:top-16",
@@ -55,19 +55,13 @@ const testimonials: Testimonial[] = [
     sizeClass: "h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24",
     positionClass: "md:bottom-14 md:left-[20%]",
   },
-  {
-    id: "mohammad-tayseer-jawabreh",
-    name: "Mohammad Tayseer Jawabreh",
-    role: "CEO, Digital Act",
-    quote:
-      "Softzino Technologies created an efficient solution for my company. I am very happy to work with them.",
-    avatar: "/images/testimonials/mohammad-tayseer-jawabreh.svg",
-    sizeClass: "h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24",
-    positionClass: "md:bottom-10 md:right-[22%]",
-  },
 ];
 
-export default function TestimonialsSection() {
+type TestimonialsSectionProps = {
+  animated?: boolean;
+};
+
+export default function TestimonialsSection({ animated = false }: TestimonialsSectionProps = {}) {
   const [activeTestimonial, setActiveTestimonial] = useState<Testimonial | null>(null);
 
   useEffect(() => {
@@ -116,7 +110,7 @@ export default function TestimonialsSection() {
                   onClick={() => setActiveTestimonial(isActive ? null : testimonial)}
                   className={`group relative z-10 flex shrink-0 items-center justify-center overflow-hidden rounded-full border-4 bg-white shadow-card-md transition duration-200 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-primary md:absolute ${testimonial.sizeClass} ${testimonial.positionClass} ${
                     isActive ? "border-teal-primary" : "border-white"
-                  }`}
+                  } ${animated && isActive ? "scale-[1.03] shadow-card-lg" : ""}`}
                 >
                   <Image
                     src={assetPath(testimonial.avatar)}
@@ -131,7 +125,11 @@ export default function TestimonialsSection() {
           </div>
 
           {activeTestimonial && (
-            <article className="relative z-20 mt-8 w-full rounded-card border border-border-lighter bg-white p-5 shadow-card-lg sm:p-6 md:absolute md:left-1/2 md:top-[190px] md:mt-0 md:w-[min(680px,calc(100%_-_2rem))] md:-translate-x-1/2 md:p-8">
+            <article
+              className={`relative z-20 mt-8 w-full rounded-card border border-border-lighter bg-white p-5 shadow-card-lg sm:p-6 md:absolute md:left-1/2 md:top-[190px] md:mt-0 md:w-[min(680px,calc(100%_-_2rem))] md:-translate-x-1/2 md:p-8 ${
+                animated ? "home-testimonial-in" : ""
+              }`}
+            >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex min-w-0 items-center gap-4">
                   <Image

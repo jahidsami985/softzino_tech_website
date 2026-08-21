@@ -19,6 +19,71 @@ body {
   overflow-x: hidden;
 }
 
+@keyframes softzino-home-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes softzino-home-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes softzino-home-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes softzino-testimonial-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.home-hero-fade-up {
+  animation: softzino-home-fade-up 720ms ease-out both;
+}
+
+.home-hero-scale-in {
+  animation: softzino-home-scale-in 820ms ease-out both;
+}
+
+.home-testimonial-in {
+  animation: softzino-testimonial-in 260ms ease-out both;
+}
+
+.home-hero-visual-float {
+  transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 1024px) {
+  .home-hero-visual-float {
+    animation: softzino-home-float 7.5s ease-in-out infinite;
+  }
+}
+
 /* Visible keyboard focus for accessibility */
 a:focus-visible,
 button:focus-visible,
@@ -35,5 +100,15 @@ select:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .home-reveal,
+  .home-hero-fade-up,
+  .home-hero-scale-in,
+  .home-testimonial-in,
+  .home-hero-visual-float {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

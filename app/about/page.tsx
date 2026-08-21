@@ -4,7 +4,6 @@ import {
   Calendar,
   CheckCircle2,
   ClipboardCheck,
-  Scale,
   ShieldCheck,
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -13,38 +12,48 @@ import RecognitionSection from "@/components/about/RecognitionSection";
 export const metadata: Metadata = {
   title: "About Us | Softzino Technologies",
   description:
-    "Empowering global enterprises through intelligent software engineering. Learn about Softzino's mission, awards, partnerships, and certifications.",
+    "Learn about Softzino Technologies, a Bangladesh-based software development company founded in 2015 with a 100+ member team and global offices.",
 };
 
 // Large credibility numbers shown in the About hero.
 const stats = [
-  { value: "10+", label: "Years of Excellence" },
-  { value: "100+", label: "Enterprise Projects" },
-  { value: "5.0", label: "Clutch Rating" },
+  { value: "2015", label: "Founded" },
+  { value: "100+", label: "Professionals" },
+  { value: "4", label: "Office Regions" },
 ];
 
-// Technology partner names displayed in the partnership card grid.
-const partners = ["Odoo", "AWS", "Azure", "Google Cloud"];
+// Technology names displayed from the portfolio's technology stack.
+const technologies = [
+  "React / Vue / Next.js",
+  "Laravel / Node.js / Python",
+  "AWS / Azure / GCP",
+  "Docker / Kubernetes / Jenkins",
+];
 
-// Certification cards; GDPR is rendered separately because it spans the full row.
-const certifications = [
-  {
-    icon: ShieldCheck,
-    title: "ISO 27001",
-    desc: "Certified Information Security Management System, ensuring the highest standards of data protection and risk management.",
-  },
+// Verified company practices and materials from the portfolio.
+const verifiedPractices = [
   {
     icon: ClipboardCheck,
-    title: "ISO 9001",
-    desc: "Quality Management System certification demonstrating our commitment to consistent, high-quality software delivery.",
+    title: "Export Registration Certificate",
+    desc: "The company portfolio lists an Export Registration Certificate (ERC) under Certifications & Association.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Delivery Methodologies",
+    desc: "The portfolio names Agile, Scrum, Iterative Prototyping, and Spiral methodologies.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "QA & Testing Practice",
+    desc: "The portfolio highlights robust QA with manual, automation, performance, and software quality assurance capabilities.",
   },
 ];
 
 // Bullet points shown beside the consultation widget.
 const consultationItems = [
-  "Direct access to senior enterprise architects",
+  "Direct access to experienced software professionals",
   "Tailored technology roadmap discussion",
-  "Security & compliance architecture review",
+  "Quality, delivery, and engineering workflow review",
 ];
 
 export default function AboutPage() {
@@ -83,18 +92,18 @@ export default function AboutPage() {
 
       <RecognitionSection />
 
-      {/* Partnerships: simple partner tiles matching the Figma card layout. */}
+      {/* Technology coverage: simple tiles matching the Figma card layout. */}
       <section className="bg-bg-cream">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
           <p className="font-mono text-xs uppercase tracking-wide text-gold">
-            {"// Partnerships"}
+            {"// Technology Stack"}
           </p>
           <h2 className="mt-2 text-2xl font-bold text-navy-deep md:text-3xl">
-            Strategic Technology Partnerships
+            Technology Coverage
           </h2>
 
           <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {partners.map((name) => (
+            {technologies.map((name) => (
               <div
                 key={name}
                 className="flex h-32 min-w-0 items-center justify-center rounded-card border border-border-lighter bg-white px-3 text-center shadow-card-sm sm:h-40"
@@ -106,18 +115,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Compliance: certifications plus the full-width GDPR standard card. */}
+      {/* Portfolio-backed practices. */}
       <section className="bg-bg-cream">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
           <p className="font-mono text-xs uppercase tracking-wide text-gold">
-            {"// Compliance"}
+            {"// Verified Practices"}
           </p>
           <h2 className="mt-2 text-2xl font-bold text-navy-deep md:text-3xl">
-            Certifications &amp; Quality Standards
+            Portfolio-Backed Company Practices
           </h2>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {certifications.map(({ icon: Icon, title, desc }) => (
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {verifiedPractices.map(({ icon: Icon, title, desc }) => (
               <article
                 key={title}
                 className="flex min-w-0 flex-col gap-4 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm sm:flex-row sm:gap-6 md:p-8"
@@ -130,16 +139,6 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-          <article className="mt-6 flex min-w-0 flex-col gap-4 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm sm:flex-row sm:gap-6 md:p-8">
-            <Scale size={28} className="shrink-0 text-gold" />
-            <div>
-              <h3 className="break-words text-xl font-bold text-navy-deep">GDPR Compliant</h3>
-              <p className="mt-2 text-body-text">
-                Strict adherence to global data protection regulations, ensuring privacy by design
-                and default in all our software architectures.
-              </p>
-            </div>
-          </article>
         </div>
       </section>
 

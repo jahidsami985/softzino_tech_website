@@ -19,10 +19,10 @@ import {
   Rocket,
   Search,
   ShieldCheck,
-  Star,
   Users2,
   ClipboardList,
 } from "lucide-react";
+import Reveal from "@/components/home/Reveal";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { assetPath } from "@/lib/site-paths";
 
@@ -96,11 +96,11 @@ const whyChoose = [
 
 // Compact proof points shown below the hero image.
 const trustMetrics = [
-  { icon: Star, value: "5.0/5", label: "Clutch Rating", tone: "text-gold fill-gold" },
-  { icon: ShieldCheck, value: "ISO 27001", label: "Certified", tone: "text-teal-secondary" },
-  { icon: Award, value: "10+ Years", label: "Experience", tone: "text-gold" },
-  { icon: CheckCircle2, value: "100+", label: "Projects Delivered", tone: "text-teal-secondary" },
-  { icon: Globe2, value: "Global", label: "Delivery Capability", tone: "text-navy-header" },
+  { icon: Award, value: "2015", label: "Founded", tone: "text-gold" },
+  { icon: Users2, value: "100+", label: "Professionals", tone: "text-teal-secondary" },
+  { icon: Globe2, value: "4", label: "Office Regions", tone: "text-navy-header" },
+  { icon: RefreshCw, value: "Agile", label: "Delivery", tone: "text-teal-secondary" },
+  { icon: CheckCircle2, value: "QA", label: "Testing Practice", tone: "text-gold" },
 ];
 
 // Steps used by the dark engineering-process timeline.
@@ -117,27 +117,27 @@ const process = [
 // Product teasers shown on the homepage before linking to the full Solutions page.
 const products = [
   {
-    name: "Softzino ERP",
+    name: "ERP Systems",
     image: "/img1/open-office-wide.jpeg",
-    desc: "Comprehensive enterprise resource planning system tailored for manufacturing and logistics.",
+    desc: "Enterprise resource planning systems for business operations and management workflows.",
   },
   {
-    name: "Aura CRM",
+    name: "Hishabi",
     image: "/img1/engineering-floor.jpeg",
-    desc: "Intelligent customer relationship management with AI-driven insights and automation.",
+    desc: "Inventory and POS management software for sales, stock, and store operations.",
   },
   {
-    name: "Zenith E-commerce",
+    name: "Bidyava",
     image: "/img1/team-desks.jpeg",
-    desc: "Scalable, headless e-commerce platform designed for high-volume B2B and B2C transactions.",
+    desc: "Education technology platform supporting digital learning and student engagement.",
   },
 ];
 
 // Short company highlights rendered in the homepage About section.
 const aboutHighlights = [
-  { title: "Industry Recognition", desc: "Top B2B Company 2023" },
-  { title: "Key Partnerships", desc: "AWS, Microsoft Azure, Google Cloud" },
-  { title: "Certifications", desc: "ISO 27001, ISO 9001, GDPR Compliant" },
+  { title: "Founded", desc: "Softzino Technologies began in 2015." },
+  { title: "Team Strength", desc: "A diverse team of 100+ skilled professionals." },
+  { title: "Global Offices", desc: "Bangladesh, Singapore, USA, and Australia." },
 ];
 
 export default function HomePage() {
@@ -147,44 +147,58 @@ export default function HomePage() {
       <section className="bg-bg-cream">
         <div className="mx-auto grid w-full min-w-0 max-w-content grid-cols-1 items-center gap-10 overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16 lg:py-24">
           <div className="flex w-full min-w-0 max-w-xl flex-col gap-6">
-            <h1 className="max-w-full text-2xl font-bold leading-tight text-navy-deep [overflow-wrap:anywhere] sm:text-3xl md:text-4xl">
+            <h1
+              className="home-hero-fade-up max-w-full text-2xl font-bold leading-tight text-navy-deep [overflow-wrap:anywhere] sm:text-3xl md:text-4xl"
+              style={{ animationDelay: "80ms" }}
+            >
               Engineering Digital Products That Drive Business Growth
             </h1>
-            <p className="text-lg leading-relaxed text-body-text">
-              Supporting startups and enterprises with scalable software, AI, and cloud
+            <p
+              className="home-hero-fade-up text-lg leading-relaxed text-body-text"
+              style={{ animationDelay: "160ms" }}
+            >
+              Supporting startups and enterprises with scalable software, web, mobile, and cloud
               engineering.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <div
+              className="home-hero-fade-up flex flex-col gap-4 sm:flex-row sm:flex-wrap"
+              style={{ animationDelay: "240ms" }}
+            >
               <Link
                 href="/hire-developers#request-talent"
-                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-2xl bg-teal-primary px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal-secondary sm:w-auto sm:px-8"
+                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-2xl bg-teal-primary px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-teal-secondary active:translate-y-0 sm:w-auto sm:px-8"
               >
                 Contact Us
               </Link>
               <Link
                 href="/services"
-                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-2xl border-2 border-teal-primary px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-teal-primary transition-colors hover:bg-teal-primary/5 sm:w-auto sm:px-8"
+                className="inline-flex min-h-12 w-full max-w-full justify-center rounded-2xl border-2 border-teal-primary px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-teal-primary transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-teal-primary/5 active:translate-y-0 sm:w-auto sm:px-8"
               >
                 Explore Services
               </Link>
             </div>
           </div>
-          <div className="min-w-0 max-w-full overflow-hidden rounded-card shadow-card-sm">
-            <Image
-              src={assetPath("/img1/homepage-banner.jpeg")}
-              alt="Softzino Technologies office building"
-              width={552}
-              height={501}
-              priority
-              className="aspect-[4/3] w-full object-cover object-top"
-            />
+          <div
+            className="home-hero-scale-in min-w-0 max-w-full overflow-hidden rounded-card shadow-card-sm"
+            style={{ animationDelay: "150ms" }}
+          >
+            <div className="home-hero-visual-float">
+              <Image
+                src={assetPath("/img1/homepage-banner.jpeg")}
+                alt="Softzino Technologies office building"
+                width={552}
+                height={501}
+                priority
+                className="aspect-[4/3] w-full object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Trust bar: quick credibility metrics immediately below the hero. */}
       <section className="border-y border-border-lighter bg-white">
-        <div className="mx-auto grid max-w-content grid-cols-2 items-center justify-center gap-x-6 gap-y-5 px-4 py-8 sm:flex sm:flex-wrap sm:gap-x-10 sm:gap-y-4 md:px-8 lg:px-16">
+        <Reveal className="mx-auto grid max-w-content grid-cols-2 items-center justify-center gap-x-6 gap-y-5 px-4 py-8 sm:flex sm:flex-wrap sm:gap-x-10 sm:gap-y-4 md:px-8 lg:px-16">
           {trustMetrics.map(({ icon: Icon, value, label, tone }) => (
             <div key={label} className="flex min-w-0 items-center gap-2 text-sm font-medium text-navy-deep">
               <Icon size={18} className={tone} />
@@ -196,36 +210,45 @@ export default function HomePage() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* What We Do: service cards generated from the whatWeDo array above. */}
       <section className="bg-bg-warm-gray">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
-          <div className="mx-auto max-w-2xl text-center">
+          <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">What We Do</h2>
             <p className="mt-3 text-body-text">
               Comprehensive software engineering services to scale your business.
             </p>
-          </div>
+          </Reveal>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {whatWeDo.map(({ icon: Icon, title, desc }) => (
-              <div
+            {whatWeDo.map(({ icon: Icon, title, desc }, index) => (
+              <Reveal
                 key={title}
-                className="min-w-0 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm md:p-8"
+                delay={Math.min(index, 5) * 70}
+                className="min-w-0"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-card bg-bg-warm-gray">
-                  <Icon size={22} className="text-teal-secondary" />
-                </div>
-                <h3 className="mt-4 break-words text-lg font-bold text-navy-deep">{title}</h3>
-                <p className="mt-4 text-base leading-relaxed text-body-text">{desc}</p>
-                <Link
-                  href="/services"
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-primary hover:underline"
+                <div
+                  className="h-full min-w-0 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-primary hover:shadow-card-md md:p-8"
                 >
-                  Learn More <ArrowRight size={14} />
-                </Link>
-              </div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-card bg-bg-warm-gray">
+                    <Icon size={22} className="text-teal-secondary" />
+                  </div>
+                  <h3 className="mt-4 break-words text-lg font-bold text-navy-deep">{title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-body-text">{desc}</p>
+                  <Link
+                    href="/services"
+                    className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-primary hover:underline"
+                  >
+                    Learn More{" "}
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform duration-200 ease-out group-hover:translate-x-1"
+                    />
+                  </Link>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -234,40 +257,50 @@ export default function HomePage() {
       {/* Why Choose: value props generated from the whyChoose array above. */}
       <section className="bg-white">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
-          <div className="mx-auto max-w-2xl text-center">
+          <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-navy-deep md:text-3xl">Why Choose Softzino</h2>
             <p className="mt-3 text-body-text">
               Delivering excellence through our core principles.
             </p>
-          </div>
+          </Reveal>
           <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
-            {whyChoose.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="flex items-start gap-4">
+            {whyChoose.map(({ icon: Icon, title, desc }, index) => (
+              <Reveal
+                key={title}
+                delay={Math.min(index, 5) * 60}
+                className="flex items-start gap-4"
+              >
                 <Icon size={24} className="mt-1 shrink-0 text-teal-secondary" />
                 <div>
                   <h3 className="text-base font-bold text-navy-deep">{title}</h3>
                   <p className="mt-2 text-base leading-relaxed text-body-text">{desc}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <TestimonialsSection />
+      <Reveal>
+        <TestimonialsSection animated />
+      </Reveal>
 
       {/* Engineering process: grid on compact screens, connected row on desktop. */}
       <section className="bg-navy-header">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
-          <div className="mx-auto max-w-2xl text-center">
+          <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-white md:text-3xl">Our Engineering Process</h2>
             <p className="mt-3 text-white/70">
               A proven methodology to deliver successful digital products.
             </p>
-          </div>
+          </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:flex lg:items-start lg:justify-between lg:gap-0">
             {process.map(({ icon: Icon, label }, index) => (
-              <div key={label} className="flex min-w-0 items-center justify-center lg:flex-1">
+              <Reveal
+                key={label}
+                delay={Math.min(index, 5) * 55}
+                className="flex min-w-0 items-center justify-center lg:flex-1"
+              >
                 <div className="flex flex-col items-center gap-5">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-teal-secondary">
                     <Icon size={22} className="text-white" />
@@ -277,7 +310,7 @@ export default function HomePage() {
                 {index < process.length - 1 && (
                   <div className="mx-1 mt-7 hidden h-px flex-1 bg-white/25 lg:block" />
                 )}
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -286,7 +319,7 @@ export default function HomePage() {
       {/* Product teaser cards: links visitors to the full off-the-shelf solutions page. */}
       <section className="bg-bg-offwhite">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-20 lg:px-16">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="font-mono text-xs uppercase tracking-wide text-teal-primary">
                 Off-the-Shelf Solutions
@@ -297,37 +330,44 @@ export default function HomePage() {
             </div>
             <Link
               href="/off-the-shelf-solutions"
-              className="inline-flex items-center gap-1 font-bold text-teal-primary hover:underline"
+              className="group inline-flex items-center gap-1 font-bold text-teal-primary hover:underline"
             >
-              View All Solutions <ArrowRight size={16} />
+              View All Solutions{" "}
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-200 ease-out group-hover:translate-x-1"
+              />
             </Link>
-          </div>
+          </Reveal>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
-              <div
+            {products.map((product, index) => (
+              <Reveal
                 key={product.name}
-                className="overflow-hidden rounded-card border border-border-light bg-white shadow-card-sm"
+                delay={Math.min(index, 5) * 70}
+                className="min-w-0"
               >
-                <Image
-                  src={assetPath(product.image)}
-                  alt={`${product.name} dashboard preview`}
-                  width={367}
-                  height={160}
-                  className="h-40 w-full object-cover"
-                />
-                <div className="p-6 md:p-8">
-                  <h3 className="break-words text-lg font-medium text-navy-deep">{product.name}</h3>
-                  <p className="mt-2 min-h-[72px] text-sm leading-relaxed text-body-text">
-                    {product.desc}
-                  </p>
-                  <Link
-                    href="/off-the-shelf-solutions"
-                    className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-sm4 border border-teal-primary text-sm font-bold text-teal-primary transition-colors hover:bg-teal-primary/5"
-                  >
-                    Learn More
-                  </Link>
+                <div className="h-full overflow-hidden rounded-card border border-border-light bg-white shadow-card-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-primary hover:shadow-card-md">
+                  <Image
+                    src={assetPath(product.image)}
+                    alt={`${product.name} dashboard preview`}
+                    width={367}
+                    height={160}
+                    className="h-40 w-full object-cover"
+                  />
+                  <div className="p-6 md:p-8">
+                    <h3 className="break-words text-lg font-medium text-navy-deep">{product.name}</h3>
+                    <p className="mt-2 min-h-[72px] text-sm leading-relaxed text-body-text">
+                      {product.desc}
+                    </p>
+                    <Link
+                      href="/off-the-shelf-solutions"
+                      className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-sm4 border border-teal-primary text-sm font-bold text-teal-primary transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-teal-primary/5 active:translate-y-0"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -336,7 +376,7 @@ export default function HomePage() {
       {/* About preview: short company intro plus two supporting photos. */}
       <section className="bg-white">
         <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:px-16">
-          <div>
+          <Reveal>
             <p className="font-mono text-xs uppercase tracking-wide text-gold">About Softzino</p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-body-text">
               We are a collective of passionate technologists, strategists, and designers dedicated
@@ -357,12 +397,12 @@ export default function HomePage() {
             </div>
             <Link
               href="/about"
-              className="mt-8 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl border border-navy-deep px-5 text-center text-sm font-bold uppercase tracking-wide text-navy-deep transition-colors hover:bg-navy-deep hover:text-white sm:w-auto sm:px-7"
+              className="mt-8 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl border border-navy-deep px-5 text-center text-sm font-bold uppercase tracking-wide text-navy-deep transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-navy-deep hover:text-white active:translate-y-0 sm:w-auto sm:px-7"
             >
               Learn About Us
             </Link>
-          </div>
-          <div className="grid grid-cols-2 items-center gap-5">
+          </Reveal>
+          <Reveal delay={120} className="grid grid-cols-2 items-center gap-5">
             <Image
               src={assetPath("/img1/planning-session.jpeg")}
               alt="Softzino team collaborating around a workshop table"
@@ -377,33 +417,33 @@ export default function HomePage() {
               height={178}
               className="mt-14 w-full rounded-card object-cover shadow-card-sm"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Hiring CTA: promotes the dedicated Hire Developers route. */}
       <section className="bg-teal-primary">
-        <div className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16">
+        <Reveal className="mx-auto max-w-content px-4 py-16 text-center md:px-8 md:py-20 lg:px-16">
           <h2 className="text-2xl font-bold text-white md:text-3xl">
             Scale Your Engineering Team Faster
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-white/90">
-            Augment your internal teams with our pre-vetted, top-tier software engineers, UI/UX
-            designers, and project managers.
+            Augment your internal teams with skilled software engineers, UI/UX designers, SQA
+            engineers, and project managers.
           </p>
           <Link
             href="/hire-developers"
-            className="mt-6 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl bg-navy-header px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-deep sm:w-auto sm:px-8"
+            className="mt-6 inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl bg-navy-header px-5 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-navy-deep active:translate-y-0 sm:w-auto sm:px-8"
           >
             Hire Developers
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* Final CTA: wraps the homepage with consultation and contact actions. */}
       <section className="bg-bg-warm-gray">
         <div className="mx-auto max-w-content px-4 py-16 md:px-8 lg:px-16">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-card border border-border-light bg-white p-6 text-center shadow-card-sm sm:p-8 md:p-10">
+          <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-card border border-border-light bg-white p-6 text-center shadow-card-sm sm:p-8 md:p-10">
             <h2 className="text-xl font-bold text-navy-deep md:text-2xl">
               Ready to Build Your Next Digital Product?
             </h2>
@@ -413,18 +453,18 @@ export default function HomePage() {
             <div className="mt-4 flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row sm:flex-wrap">
               <Link
                 href="/hire-developers#request-talent"
-                className="inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl bg-navy-header px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-deep sm:w-auto sm:px-6"
+                className="inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl bg-navy-header px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-navy-deep active:translate-y-0 sm:w-auto sm:px-6"
               >
                 Schedule a Consultation
               </Link>
               <Link
                 href="/hire-developers#request-talent"
-                className="inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl border border-navy-deep px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-navy-deep transition-colors hover:bg-navy-deep hover:text-white sm:w-auto sm:px-6"
+                className="inline-flex min-h-12 w-full max-w-full items-center justify-center rounded-2xl border border-navy-deep px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-navy-deep transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-navy-deep hover:text-white active:translate-y-0 sm:w-auto sm:px-6"
               >
                 Contact Us
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

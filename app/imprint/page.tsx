@@ -14,20 +14,28 @@ export default function ImprintPage() {
       intro="Reference information for Softzino Technologies offices and company contact paths."
       sections={[
         {
-          title: "Singapore Office",
-          body: "10 Anson Road, #22-02 International Plaza, Singapore 079903.",
+          title: "Head Office Bangladesh",
+          body: "23, Tropical Akhand Tower (Level # 03 & 04), Garib-e-Newaz Ave, Sector # 11, Uttara, Dhaka - 1230.",
         },
         {
-          title: "Dhaka Office",
-          body: "House 12, Road 5, Dhanmondi, Dhaka 1205, Bangladesh.",
+          title: "Singapore Office",
+          body: "60 Paya Lebar Raod, # 06 - 33, Paya Lebar Square, Singapore 409051.",
+        },
+        {
+          title: "USA Office",
+          body: "92 Cabot Ave, Santa Clara, CA 95051, USA.",
+        },
+        {
+          title: "Australia Office",
+          body: "3/23 Hull Street, Hawthorn 3122, Australia.",
         },
         {
           title: "Business Inquiries",
-          body: "For business or partnership inquiries, use the consultation and contact forms linked throughout the website.",
+          body: "Phone: +880 1855 25 53 42. Email: info@softzino.com. Website: www.softzino.com.",
         },
         {
           title: "Company Materials",
-          body: "Brand, press, and partnership materials can be requested directly from the Softzino team.",
+          body: "Brand, press, and company-profile materials can be requested directly from the Softzino team.",
         },
       ]}
     />

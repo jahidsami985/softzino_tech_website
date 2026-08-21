@@ -11,28 +11,32 @@ type RecognitionItem = {
 
 const recognitions: RecognitionItem[] = [
   {
-    title: "BASIS",
-    description: "Softzino Technologies is a proud Member of BASIS since 2019.",
-    logo: "/images/recognition/basis.svg",
-    badgeLabel: "BASIS member",
+    title: "Export Registration Certificate",
+    description:
+      "Softzino Technologies lists an Export Registration Certificate (ERC) in its company portfolio.",
+    logo: "/images/recognition/erc.svg",
+    badgeLabel: "ERC listed",
   },
   {
-    title: "DUNS Registered",
-    description: "Softzino Technologies is a DUNS Registered Company.",
-    logo: "/images/recognition/duns.svg",
-    badgeLabel: "DUNS registered",
+    title: "Founded in 2015",
+    description:
+      "The portfolio identifies 2015 as the founding year of Softzino Technologies.",
+    logo: "/images/recognition/founded-2015.svg",
+    badgeLabel: "Founded in 2015",
   },
   {
-    title: "ISO 27001",
-    description: "Softzino Technologies is an ISO 27001 Certified Company.",
-    logo: "/images/recognition/iso-27001.svg",
-    badgeLabel: "ISO 27001 certified",
+    title: "100+ Professionals",
+    description:
+      "The company profile describes a diverse team of more than 100 skilled professionals.",
+    logo: "/images/recognition/team-100.svg",
+    badgeLabel: "100 plus professionals",
   },
   {
-    title: "ISO 9001:2015",
-    description: "Softzino Technologies is an ISO 9001:2015 Certified Company.",
-    logo: "/images/recognition/iso-9001.svg",
-    badgeLabel: "ISO 9001:2015 certified",
+    title: "Global Offices",
+    description:
+      "Softzino lists office locations in Bangladesh, Singapore, the USA, and Australia.",
+    logo: "/images/recognition/global-offices.svg",
+    badgeLabel: "Global offices",
   },
 ];
 
