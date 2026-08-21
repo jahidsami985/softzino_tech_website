@@ -169,12 +169,12 @@ export default function HomePage() {
             </div>
           </div>
           <Image
-            src={assetPath("/images/home-hero.png")}
-            alt="Softzino engineering team working in a modern technology office"
+            src={assetPath("/img1/homepage-banner.jpeg")}
+            alt="Softzino Technologies office building"
             width={552}
             height={501}
             priority
-            className="aspect-[4/3] w-full rounded-card object-cover shadow-card-sm"
+            className="aspect-[4/3] w-full rounded-card object-cover object-top shadow-card-sm"
           />
         </div>
       </section>
