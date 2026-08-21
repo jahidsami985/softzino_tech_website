@@ -63,8 +63,8 @@ export const physicalAiService: BatchServiceData = {
     "Integrate AI with robotics, edge devices, and physical systems for real-time autonomous action.",
   designFile: "batch1/Jahid Sami's team library (2)/Main.png",
   assetFiles: [
-    "/images/batch1/physical-ai-hero.png",
-    "/images/batch1/physical-ai-industries.png",
+    "/img1/engineering-floor.jpeg",
+    "/img1/open-office-collaboration.jpeg",
   ],
   hero: {
     theme: "light",
@@ -73,7 +73,7 @@ export const physicalAiService: BatchServiceData = {
     title:
       "Bridging the Gap Between Intelligence and Action. Integrating AI with physical systems like robotics and edge devices.",
     media: {
-      src: "/images/batch1/physical-ai-hero.png",
+      src: "/img1/engineering-floor.jpeg",
       alt: "Robotic arm operating in an intelligent automation lab",
       overlayTitle: "Real-Time",
       overlayText: "Autonomous decision making at the edge.",
@@ -160,7 +160,7 @@ export const physicalAiService: BatchServiceData = {
       title: "Industries Transformed",
       intro: "Where Physical AI is making the most significant impact today.",
       image: {
-        src: "/images/batch1/physical-ai-industries.png",
+        src: "/img1/open-office-collaboration.jpeg",
         alt: "Physical AI industry examples across manufacturing, agriculture, healthcare robotics, and drones",
       },
     },
@@ -206,11 +206,11 @@ export const systemIntegrationService: BatchServiceData = {
   description:
     "Unify enterprise software, hardware, and data flows into one cohesive operating ecosystem.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-1.png",
-  assetFiles: ["/images/batch1/system-integration-hero.png"],
+  assetFiles: ["/img1/team-desks.jpeg"],
   hero: {
     theme: "dark",
     layout: "background",
-    backgroundImage: "/images/batch1/system-integration-hero.png",
+    backgroundImage: "/img1/team-desks.jpeg",
     title: "System Integration",
     subtitle: "Unified Systems for Seamless Enterprise Operations.",
     primary: { label: "Talk to an Expert", href: hireHref, variant: "gold" },
@@ -314,8 +314,8 @@ export const applicationModernizationService: BatchServiceData = {
     "Refactor, re-platform, and modernize legacy applications for resilient cloud-native delivery.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-2.png",
   assetFiles: [
-    "/images/batch1/application-modernization-hero.png",
-    "/images/batch1/application-modernization-why.png",
+    "/img1/engineering-floor.jpeg",
+    "/img1/planning-session.jpeg",
   ],
   hero: {
     theme: "dark",
@@ -324,7 +324,7 @@ export const applicationModernizationService: BatchServiceData = {
     title: "Application Modernization",
     subtitle: "Revitalize Your Legacy Systems for the Cloud Era.",
     media: {
-      src: "/images/batch1/application-modernization-hero.png",
+      src: "/img1/engineering-floor.jpeg",
       alt: "Application modernization transformation engine illustration",
     },
     primary: { label: "Schedule a Call", href: hireHref, variant: "gold" },
@@ -453,7 +453,7 @@ export const applicationModernizationService: BatchServiceData = {
         },
       ],
       image: {
-        src: "/images/batch1/application-modernization-why.png",
+        src: "/img1/planning-session.jpeg",
         alt: "Modernization strategy session in an enterprise meeting room",
         stat: "15+",
         statLabel: "Years of enterprise delivery excellence",
@@ -529,7 +529,7 @@ export const experienceDesignService: BatchServiceData = {
   description:
     "Design human-centric digital experiences through user research, interaction design, and service design.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-3.png",
-  assetFiles: ["/images/batch1/experience-design-hero.png"],
+  assetFiles: ["/img1/planning-session.jpeg"],
   hero: {
     theme: "dark",
     layout: "split",
@@ -539,7 +539,7 @@ export const experienceDesignService: BatchServiceData = {
     subtitle:
       "Deep focus on user journeys, behavioral psychology, and high-fidelity interaction design to craft digital experiences that resonate and convert.",
     media: {
-      src: "/images/batch1/experience-design-hero.png",
+      src: "/img1/planning-session.jpeg",
       alt: "Experience design workspace showing interface flows and analytics",
       overlayTitle: "3x",
       overlayText: "Higher retention",
@@ -659,11 +659,11 @@ export const marketingAutomationService: BatchServiceData = {
   description:
     "Streamline marketing workflows and lead management through data-driven automation.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-4.png",
-  assetFiles: ["/images/batch1/marketing-automation-hero.png"],
+  assetFiles: ["/img1/team-meeting.jpeg"],
   hero: {
     theme: "light",
     layout: "background",
-    backgroundImage: "/images/batch1/marketing-automation-hero.png",
+    backgroundImage: "/img1/team-meeting.jpeg",
     eyebrow: "Services / Marketing Automation",
     title: "Scale Your Growth with Intelligent Automation",
     subtitle:
@@ -792,11 +792,11 @@ export const artificialIntelligenceService: BatchServiceData = {
   description:
     "Build machine learning, NLP, computer vision, and generative AI systems for enterprise outcomes.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-5.png",
-  assetFiles: ["/images/batch1/artificial-intelligence-hero.png"],
+  assetFiles: ["/img1/engineering-floor.jpeg"],
   hero: {
     theme: "black",
     layout: "background",
-    backgroundImage: "/images/batch1/artificial-intelligence-hero.png",
+    backgroundImage: "/img1/engineering-floor.jpeg",
     eyebrow: "Service Offering",
     title: "Artificial Intelligence",
     subtitle: "Transforming Business with Predictive Intelligence.",
@@ -924,13 +924,13 @@ export const webApplicationDevelopmentService: BatchServiceData = {
     "Build scalable, secure, responsive web applications for enterprise operations and digital growth.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-6.png",
   assetFiles: [
-    "/images/batch1/web-application-hero.png",
-    "/images/batch1/web-application-overview.png",
+    "/img1/team-desks.jpeg",
+    "/img1/open-office-wide.jpeg",
   ],
   hero: {
     theme: "dark",
     layout: "background",
-    backgroundImage: "/images/batch1/web-application-hero.png",
+    backgroundImage: "/img1/team-desks.jpeg",
     eyebrow: "Core Service",
     title: "High-Performance Web Solutions for Enterprise",
     subtitle:
@@ -949,7 +949,7 @@ export const webApplicationDevelopmentService: BatchServiceData = {
         "Extend your digital reach with robust web platforms. In a digital-first economy, an agile and powerful web presence is non-negotiable. Custom web applications allow you to streamline complex workflows, engage broader audiences, and adapt rapidly to changing market demands without the constraints of off-the-shelf software.",
       ],
       image: {
-        src: "/images/batch1/web-application-overview.png",
+        src: "/img1/open-office-wide.jpeg",
         alt: "Web application architecture review in a collaborative workspace",
         overlayTitle: "Architectural Excellence",
         overlayText: "Building foundational structures designed for long-term scalability and resilience.",
@@ -1040,11 +1040,11 @@ export const webServiceDevelopmentService: BatchServiceData = {
   description:
     "Build reliable backend services, APIs, and data layers for modern software ecosystems.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-7.png",
-  assetFiles: ["/images/batch1/web-service-hero.png"],
+  assetFiles: ["/img1/engineering-floor.jpeg"],
   hero: {
     theme: "dark",
     layout: "background",
-    backgroundImage: "/images/batch1/web-service-hero.png",
+    backgroundImage: "/img1/engineering-floor.jpeg",
     eyebrow: "Service Profile",
     title: "Building Seamless Backends for Modern Apps",
     subtitle:
@@ -1295,7 +1295,7 @@ export const pluginDevelopmentService: BatchServiceData = {
   description:
     "Create custom extensions, browser plugins, CMS modules, CRM add-ons, and integrations for existing platforms.",
   designFile: "batch1/Jahid Sami's team library (2)/Main-9.png",
-  assetFiles: ["/images/batch1/plugin-strategy.png"],
+  assetFiles: ["/img1/team-meeting.jpeg"],
   hero: {
     theme: "light",
     layout: "plain",
@@ -1313,7 +1313,7 @@ export const pluginDevelopmentService: BatchServiceData = {
       label: "Strategic Advantage",
       intro: "Why building modular plugins is often smarter than custom ground-up development.",
       image: {
-        src: "/images/batch1/plugin-strategy.png",
+        src: "/img1/team-meeting.jpeg",
         alt: "Custom plugin ecosystem architecture illustration",
       },
       cards: [

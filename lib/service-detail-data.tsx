@@ -63,7 +63,7 @@ export const mobileAppDevelopmentService = {
   headline: "Building High-Performance Native & Cross-Platform Experiences",
   intro:
     "From concept to launch, we engineer scalable, secure, and user-centric mobile applications that drive business growth.",
-  image: "/images/service-mobile-app-hero.png",
+  image: "/img1/engineering-floor.jpeg",
   imageAlt: "Softzino mobile app development showcase",
   summary: [
     {
@@ -182,7 +182,7 @@ export const iotWearableService = {
   headline: "Connecting the Physical and Digital Worlds",
   intro:
     "Custom IoT solutions for industrial, healthcare, and consumer sectors, focusing on data connectivity and smart device ecosystems.",
-  image: "/images/service-iot-hero.png",
+  image: "/img1/open-office-collaboration.jpeg",
   imageAlt: "IoT and wearable device ecosystem illustration",
   summary: [
     {
@@ -273,7 +273,7 @@ export const semiconductorTestingService = {
   headline: "Precision Testing for Next-Generation Silicon",
   intro:
     "Advanced semiconductor validation and testing services ensuring silicon reliability and performance for modern chipsets.",
-  image: "/images/service-semiconductor-hero.png",
+  image: "/img1/team-desks.jpeg",
   imageAlt: "Semiconductor validation and silicon testing lab",
   summary: [
     {
@@ -393,7 +393,7 @@ export const skillDevelopmentService = {
   ecosystemTitle: "Continuous Learning Ecosystems",
   ecosystemText:
     "Skill development at the enterprise level requires continuous learning programs designed to bridge the gap between legacy expertise and modern AI-driven engineering practices. We design bespoke curricula that align with your strategic technology roadmap, ensuring your workforce evolves alongside your architecture.",
-  ecosystemImage: "/images/service-skill-lab.png",
+  ecosystemImage: "/img1/team-meeting.jpeg",
   outcomes: [
     {
       icon: Rocket,
@@ -450,7 +450,7 @@ export const skillDevelopmentService = {
     "Java Enterprise",
     "React / Node.js",
   ],
-  whyImage: "/images/service-skill-stairs.png",
+  whyImage: "/img1/planning-session.jpeg",
   whyChoose: [
     {
       title: "Practitioners, Not Just Trainers",

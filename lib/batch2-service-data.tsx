@@ -47,8 +47,8 @@ export const cloudConsultingService: BatchServiceData = {
   designFile: `${batch2Root}/Main.png`,
   cssFile: `${cssNotes}: Cloud Consulting | Softzino Technologies`,
   assetFiles: [
-    "/images/batch2/cloud-consulting-overview.png",
-    "/images/batch2/cloud-consulting-case.png",
+    "/img1/planning-session.jpeg",
+    "/img1/team-meeting.jpeg",
   ],
   hero: {
     theme: "light",
@@ -80,7 +80,7 @@ export const cloudConsultingService: BatchServiceData = {
         "We strip away the complexity of modern cloud ecosystems, providing clear, actionable intelligence that mitigates risk while maximizing operational agility.",
       ],
       image: {
-        src: "/images/batch2/cloud-consulting-overview.png",
+        src: "/img1/planning-session.jpeg",
         alt: "Abstract cloud architecture model used for cloud consulting strategy",
         overlayTitle: "Expert Architectural Guidance",
       },
@@ -209,7 +209,7 @@ export const cloudConsultingService: BatchServiceData = {
         "Through a comprehensive architecture audit and right-sizing strategy, we restructured their AWS environment, unlocking massive capital while improving systemic resilience.",
       ],
       image: {
-        src: "/images/batch2/cloud-consulting-case.png",
+        src: "/img1/team-meeting.jpeg",
         alt: "Cloud consulting case study visual for a logistics provider",
       },
     },
@@ -250,8 +250,8 @@ export const cloudMigrationService: BatchServiceData = {
   designFile: `${batch2Root}/Main-1.png`,
   cssFile: `${cssNotes}: Cloud Migration | Softzino Technologies`,
   assetFiles: [
-    "/images/batch2/cloud-migration-hero.png",
-    "/images/batch2/cloud-migration-industries.png",
+    "/img1/open-office-wide.jpeg",
+    "/img1/open-office-collaboration.jpeg",
   ],
   hero: {
     theme: "light",
@@ -260,7 +260,7 @@ export const cloudMigrationService: BatchServiceData = {
     title: "Seamless Cloud Migration",
     subtitle: "Modernize your infrastructure with risk-free data and application migration.",
     media: {
-      src: "/images/batch2/cloud-migration-hero.png",
+      src: "/img1/open-office-wide.jpeg",
       alt: "Cloud migration visual showing data moving from servers into cloud infrastructure",
     },
     primary: { label: "Talk to an Expert", href: hireHref, variant: "dark" },
@@ -401,8 +401,8 @@ export const cloudManagedServicesService: BatchServiceData = {
   designFile: `${batch2Root}/Main-2.png`,
   cssFile: `${cssNotes}: Cloud Managed Services | Softzino Technologies`,
   assetFiles: [
-    "/images/batch2/cloud-managed-overview.png",
-    "/images/batch2/cloud-managed-industries.png",
+    "/img1/team-desks.jpeg",
+    "/img1/open-office-wide.jpeg",
   ],
   hero: {
     theme: "black",
@@ -422,7 +422,7 @@ export const cloudManagedServicesService: BatchServiceData = {
         "We take the complexity out of cloud operations. Our managed services guarantee high availability, strict security compliance, and peak performance for your enterprise workloads, allowing your internal teams to focus on strategic initiatives rather than daily maintenance.",
       ],
       image: {
-        src: "/images/batch2/cloud-managed-overview.png",
+        src: "/img1/team-desks.jpeg",
         alt: "Cloud operations command center monitoring managed cloud workloads",
       },
     },
@@ -620,7 +620,7 @@ export const dataStrategyGovernanceService: BatchServiceData = {
     "Define trusted data policies, ownership models, quality controls, and governance frameworks for modern enterprise data.",
   designFile: `${batch2Root}/Main-4.png`,
   cssFile: `${cssNotes}: Data Strategy & Governance | Softzino Technologies`,
-  assetFiles: ["/images/batch2/data-strategy-hero.png"],
+  assetFiles: ["/img1/planning-session.jpeg"],
   hero: {
     theme: "black",
     layout: "split",
@@ -629,7 +629,7 @@ export const dataStrategyGovernanceService: BatchServiceData = {
     subtitle:
       "Align your data assets with business goals through robust frameworks and ethical compliance. We build the foundation for trusted, high-quality data that drives definitive decision-making.",
     media: {
-      src: "/images/batch2/data-strategy-hero.png",
+      src: "/img1/planning-session.jpeg",
       alt: "Data strategy and governance design reference panel",
     },
     primary: { label: "Schedule a Consultation", href: hireHref, variant: "gold" },
@@ -784,7 +784,7 @@ export const reportingBusinessIntelligenceService: BatchServiceData = {
     "Convert raw data into dashboards, analytical narratives, predictive reporting, and operational transparency.",
   designFile: `${batch2Root}/Main-6.png`,
   cssFile: `${cssNotes}: Reporting & Business Intelligence | Softzino Technologies`,
-  assetFiles: ["/images/batch2/reporting-bi-overview.png"],
+  assetFiles: ["/img1/team-meeting.jpeg"],
   hero: {
     theme: "light",
     layout: "plain",
@@ -803,7 +803,7 @@ export const reportingBusinessIntelligenceService: BatchServiceData = {
         "By layering predictive models onto historical data, we transition your reporting from a rear-view mirror into a strategic compass.",
       ],
       image: {
-        src: "/images/batch2/reporting-bi-overview.png",
+        src: "/img1/team-meeting.jpeg",
         alt: "Business intelligence dashboard being reviewed in a meeting",
         overlayTitle: "Clarity From Data",
       },
@@ -865,7 +865,7 @@ export const staffAugmentationService: BatchServiceData = {
     "Integrate vetted senior engineers into your existing workflows to close skill gaps and accelerate delivery.",
   designFile: `${batch2Root}/Main-7.png`,
   cssFile: `${cssNotes}: Staff Augmentation | Softzino Technologies`,
-  assetFiles: ["/images/batch2/staff-augmentation-hero.png"],
+  assetFiles: ["/img1/team-meeting.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -874,7 +874,7 @@ export const staffAugmentationService: BatchServiceData = {
     subtitle:
       "Seamlessly scale your technical capability. We integrate top-tier engineering talent into your existing workflows to close skill gaps and accelerate project delivery, without the overhead of traditional hiring.",
     media: {
-      src: "/images/batch2/staff-augmentation-hero.png",
+      src: "/img1/team-meeting.jpeg",
       alt: "Augmented engineering team joining an implementation workshop",
       overlayTitle: "Rapid Deployment",
       overlayText: "Experts integrated in under 14 days.",
@@ -999,7 +999,7 @@ export const dedicatedDevelopmentTeamService: BatchServiceData = {
     "Build autonomous, full-cycle product squads that operate as a long-term engineering extension of your organization.",
   designFile: `${batch2Root}/Main-8.png`,
   cssFile: `${cssNotes}: Dedicated Development Team | Softzino Technologies`,
-  assetFiles: ["/images/batch2/dedicated-team-hero.png"],
+  assetFiles: ["/img1/team-meeting.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -1008,7 +1008,7 @@ export const dedicatedDevelopmentTeamService: BatchServiceData = {
     subtitle:
       "Scale your engineering capacity with autonomous, full-cycle product teams that function as a seamless extension of your organization. Built for long-term strategic execution.",
     media: {
-      src: "/images/batch2/dedicated-team-hero.png",
+      src: "/img1/team-meeting.jpeg",
       alt: "Dedicated development team working in a collaborative engineering office",
     },
     primary: { label: "Build Your Squad", href: hireHref, variant: "dark" },
@@ -1098,8 +1098,8 @@ export const itStaffingService: BatchServiceData = {
   designFile: `${batch2Root}/Main-9.png`,
   cssFile: `${cssNotes}: IT Staffing | Softzino Technologies`,
   assetFiles: [
-    "/images/batch2/it-staffing-network.png",
-    "/images/batch2/it-staffing-metrics.png",
+    "/img1/open-office-wide.jpeg",
+    "/img1/engineering-floor.jpeg",
   ],
   hero: {
     theme: "black",
@@ -1120,7 +1120,7 @@ export const itStaffingService: BatchServiceData = {
         "In today's competitive landscape, finding the right technical expertise is the primary bottleneck for innovation. We don't just match keywords on a resume; we evaluate deep technical competency, problem-solving capability, and cultural fit.",
       ],
       image: {
-        src: "/images/batch2/it-staffing-network.png",
+        src: "/img1/open-office-wide.jpeg",
         alt: "Technical talent network visualization for IT staffing",
         overlayTitle: "94%",
         overlayText: "Retention rate for placements after 18 months.",
@@ -1276,11 +1276,11 @@ export const forwardDeployedAiEngineeringService: BatchServiceData = {
     "Embed specialized AI engineers into your operations to deploy custom LLM, ML, data, and edge AI solutions.",
   designFile: `${batch2Root}/Main-10.png`,
   cssFile: `${cssNotes}: Forward Deployed AI Engineering | Softzino Technologies`,
-  assetFiles: ["/images/batch2/forward-ai-hero.png"],
+  assetFiles: ["/img1/engineering-floor.jpeg"],
   hero: {
     theme: "light",
     layout: "background",
-    backgroundImage: "/images/batch2/forward-ai-hero.png",
+    backgroundImage: "/img1/engineering-floor.jpeg",
     eyebrow: "Service Overview",
     title: "Forward Deployed AI Engineering",
     subtitle:
@@ -1356,7 +1356,7 @@ export const managedEngineeringTeamService: BatchServiceData = {
     "Scale delivery through autonomous, managed engineering pods with technical leadership, SLAs, and performance transparency.",
   designFile: `${batch2Root}/Main-11.png`,
   cssFile: `${cssNotes}: Managed Engineering Team | Softzino Technologies`,
-  assetFiles: ["/images/batch2/managed-team-hero.png"],
+  assetFiles: ["/img1/team-desks.jpeg"],
   hero: {
     theme: "black",
     layout: "split",
@@ -1365,7 +1365,7 @@ export const managedEngineeringTeamService: BatchServiceData = {
     subtitle:
       "Accelerate your roadmap with fully managed, autonomous delivery pods. We take complete ownership of technical execution, agile processes, and measurable outcomes, allowing your leadership to focus on strategic vision.",
     media: {
-      src: "/images/batch2/managed-team-hero.png",
+      src: "/img1/team-desks.jpeg",
       alt: "Managed engineering delivery flow covering plan, build, test, deploy, monitor, and scale",
     },
     primary: { label: "Talk to an Expert", href: hireHref, variant: "gold" },
@@ -1454,11 +1454,11 @@ export const teamExtensionService: BatchServiceData = {
     "Augment engineering departments with specialized talent that integrates into your sprint rituals, tooling, and delivery cadence.",
   designFile: `${batch2Root}/Main-12.png`,
   cssFile: `${cssNotes}: Team Extension | Softzino Technologies`,
-  assetFiles: ["/images/batch2/team-extension-hero.png"],
+  assetFiles: ["/img1/open-office-collaboration.jpeg"],
   hero: {
     theme: "black",
     layout: "background",
-    backgroundImage: "/images/batch2/team-extension-hero.png",
+    backgroundImage: "/img1/open-office-collaboration.jpeg",
     eyebrow: "Service Profile",
     title: "Team Extension",
     subtitle:
@@ -1589,7 +1589,7 @@ export const dataPlatformEngineeringService: BatchServiceData = {
     "Build scalable, high-performance data architectures, lakes, warehouses, and real-time processing foundations.",
   designFile: `${batch2Root}/Main-13.png`,
   cssFile: `${cssNotes}: Data Platform Engineering | Softzino Technologies`,
-  assetFiles: ["/images/batch2/data-platform-hero.png"],
+  assetFiles: ["/img1/engineering-floor.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -1599,7 +1599,7 @@ export const dataPlatformEngineeringService: BatchServiceData = {
     subtitle:
       "Build scalable, high-performance data architectures to power your enterprise intelligence. We engineer modern data stacks, lakes, and warehouses for real-time processing.",
     media: {
-      src: "/images/batch2/data-platform-hero.png",
+      src: "/img1/engineering-floor.jpeg",
       alt: "Blurred data platform page reference showing why, engagement, and technology panels",
     },
     primary: { label: "Talk to an Expert", href: hireHref, variant: "dark" },

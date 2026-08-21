@@ -151,7 +151,7 @@ export default function HireDevelopersPage() {
 
           <div className="mx-auto mt-12 max-w-4xl rounded-card border border-border-lighter bg-white p-4 shadow-card-sm sm:p-6 md:p-12">
             <Image
-              src={assetPath("/images/hiring-process.png")}
+              src={assetPath("/img1/team-meeting.jpeg")}
               alt="Professional 4 step process for hiring developers"
               width={803}
               height={425}

@@ -42,7 +42,7 @@ export default function OffTheShelfPage() {
             {/* Featured product card using the larger ERP dashboard crop. */}
             <article className="overflow-hidden rounded-card border border-border-light bg-bg-card-gray lg:col-span-2">
               <Image
-                src={assetPath("/images/solutions-erp-wide.png")}
+                src={assetPath("/img1/open-office-wide.jpeg")}
                 alt="Softzino ERP dashboard preview"
                 width={760}
                 height={320}
@@ -71,7 +71,7 @@ export default function OffTheShelfPage() {
             {/* Supporting product card for Aura CRM. */}
             <article className="overflow-hidden rounded-card border border-border-light bg-bg-card-gray">
               <Image
-                src={assetPath("/images/solutions-crm-wide.png")}
+                src={assetPath("/img1/engineering-floor.jpeg")}
                 alt="Aura CRM analytics dashboard"
                 width={367}
                 height={207}
@@ -98,7 +98,7 @@ export default function OffTheShelfPage() {
             {/* Supporting product card for HRMS. */}
             <article className="overflow-hidden rounded-card border border-border-light bg-bg-card-gray">
               <Image
-                src={assetPath("/images/solutions-hrms-wide.png")}
+                src={assetPath("/img1/team-desks.jpeg")}
                 alt="Softzino HRMS employee directory preview"
                 width={565}
                 height={225}

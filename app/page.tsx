@@ -117,17 +117,17 @@ const process = [
 const products = [
   {
     name: "Softzino ERP",
-    image: "/images/solution-erp-card.png",
+    image: "/img1/open-office-wide.jpeg",
     desc: "Comprehensive enterprise resource planning system tailored for manufacturing and logistics.",
   },
   {
     name: "Aura CRM",
-    image: "/images/solution-crm-card.png",
+    image: "/img1/engineering-floor.jpeg",
     desc: "Intelligent customer relationship management with AI-driven insights and automation.",
   },
   {
     name: "Zenith E-commerce",
-    image: "/images/solution-ecommerce-card.png",
+    image: "/img1/team-desks.jpeg",
     desc: "Scalable, headless e-commerce platform designed for high-volume B2B and B2C transactions.",
   },
 ];
@@ -359,14 +359,14 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 items-center gap-5">
             <Image
-              src={assetPath("/images/team-workshop.png")}
+              src={assetPath("/img1/planning-session.jpeg")}
               alt="Softzino team collaborating around a workshop table"
               width={262}
               height={178}
               className="w-full rounded-card object-cover shadow-card-sm"
             />
             <Image
-              src={assetPath("/images/office-space.png")}
+              src={assetPath("/img1/open-office-collaboration.jpeg")}
               alt="Softzino open office workspace"
               width={258}
               height={178}

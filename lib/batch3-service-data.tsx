@@ -99,7 +99,7 @@ export const uiUxDesignService: BatchServiceData = {
     "Research-driven UI/UX design services for intuitive, conversion-focused, and scalable digital experiences.",
   designFile: `${batch3Root}/Jahid Sami's team library3/UI/UX Design _ Softzino Technologies.png`,
   cssFile: `${cssNotes}: UI/UX Design | Softzino Technologies`,
-  assetFiles: ["/images/batch3/ui-ux-design-hero.png"],
+  assetFiles: ["/img1/planning-session.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -109,7 +109,7 @@ export const uiUxDesignService: BatchServiceData = {
     subtitle:
       "From concept to launch, we engineer scalable, secure, and user-centric interfaces that drive engagement and business growth.",
     media: {
-      src: "/images/batch3/ui-ux-design-hero.png",
+      src: "/img1/planning-session.jpeg",
       alt: "UI and analytics dashboards displayed across design workstation screens",
     },
     primary: talkToExpert,
@@ -247,7 +247,7 @@ export const qualityEngineeringService: BatchServiceData = {
     "Comprehensive QA and quality engineering services across automation, manual, security, performance, mobile, and CI/CD testing.",
   designFile: `${batch3Root}/Jahid Sami's team library4/Quality Engineering _ Softzino Technologies.png`,
   cssFile: `${cssNotes}: Quality Engineering | Softzino Technologies`,
-  assetFiles: ["/images/batch3/quality-engineering-hero.png"],
+  assetFiles: ["/img1/team-desks.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -257,7 +257,7 @@ export const qualityEngineeringService: BatchServiceData = {
     subtitle:
       "Comprehensive QA and testing strategies that shift quality left and ensure high-performance, secure software delivery. From automated frameworks to rigorous manual testing, we guarantee flawless execution.",
     media: {
-      src: "/images/batch3/quality-engineering-hero.png",
+      src: "/img1/team-desks.jpeg",
       alt: "Quality engineering dashboard showing automated QA flows and test signals",
     },
     primary: talkToExpert,
@@ -438,7 +438,7 @@ export const productManagementService: BatchServiceData = {
     "Strategic product management services that align business goals, user needs, technical feasibility, and product delivery.",
   designFile: `${batch3Root}/Jahid Sami's team library3/Product Management _ Softzino Technologies.png`,
   cssFile: `${cssNotes}: Product Management | Softzino Technologies`,
-  assetFiles: ["/images/batch3/product-management-hero.png"],
+  assetFiles: ["/img1/team-meeting.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -448,7 +448,7 @@ export const productManagementService: BatchServiceData = {
     subtitle:
       "Bridging the gap between business goals, user needs, and technical feasibility through expert product orchestration.",
     media: {
-      src: "/images/batch3/product-management-hero.png",
+      src: "/img1/team-meeting.jpeg",
       alt: "Product management roadmap and growth dashboard visualization",
     },
     primary: talkToExpert,
@@ -636,7 +636,7 @@ export const mvpDevelopmentService: BatchServiceData = {
     "Launch a focused minimum viable product faster with lean engineering, market validation, and scalable foundations.",
   designFile: `${batch3Root}/Jahid Sami's team library4/MVP Development _ Softzino Technologies.png`,
   cssFile: `${cssNotes}: MVP Development | Softzino Technologies`,
-  assetFiles: ["/images/batch3/mvp-development-hero.png"],
+  assetFiles: ["/img1/engineering-floor.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -646,7 +646,7 @@ export const mvpDevelopmentService: BatchServiceData = {
     subtitle:
       "Fast-track product validation with high-quality Minimum Viable Products built for scalability and user feedback.",
     media: {
-      src: "/images/batch3/mvp-development-hero.png",
+      src: "/img1/engineering-floor.jpeg",
       alt: "MVP product launch visualization with a laptop, mobile screens, and connected feature blocks",
     },
     primary: talkToExpert,
@@ -780,7 +780,7 @@ export const embeddedSystemsService: BatchServiceData = {
     "End-to-end embedded software, firmware, RTOS, driver, HAL, and embedded security engineering for specialized hardware.",
   designFile: `${batch3Root}/Jahid Sami's team library2/Embedded Systems _ Softzino Technologies.png`,
   cssFile: `${cssNotes}: Embedded Systems | Softzino Technologies`,
-  assetFiles: ["/images/batch3/embedded-systems-hero.png"],
+  assetFiles: ["/img1/open-office-wide.jpeg"],
   hero: {
     theme: "light",
     layout: "split",
@@ -790,7 +790,7 @@ export const embeddedSystemsService: BatchServiceData = {
     subtitle:
       "End-to-end embedded software development for specialized hardware, ensuring performance, reliability, and security from bare-metal to OS level.",
     media: {
-      src: "/images/batch3/embedded-systems-hero.png",
+      src: "/img1/open-office-wide.jpeg",
       alt: "Embedded systems circuit board in a lab environment",
     },
     primary: talkToExpert,
