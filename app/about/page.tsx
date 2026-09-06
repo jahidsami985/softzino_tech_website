@@ -7,6 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import JourneyTimeline from "@/components/about/JourneyTimeline";
 import RecognitionSection from "@/components/about/RecognitionSection";
 
 export const metadata: Metadata = {
@@ -89,6 +90,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <JourneyTimeline />
 
       <RecognitionSection />
 

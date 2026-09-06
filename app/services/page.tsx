@@ -70,7 +70,14 @@ export default function ServicesPage() {
             <h2 className="text-xl font-bold text-navy-deep">Don&apos;t see exactly what you need?</h2>
             <p className="max-w-lg text-body-text">
               Our consultancy team can help scope custom engagements across any combination of
-              these services.
+              these services, including{" "}
+              <Link
+                href="/solutions/custom-software-solutions"
+                className="font-semibold text-teal-primary hover:underline"
+              >
+                custom software development company services
+              </Link>
+              .
             </p>
             <Link
               href="/hire-developers#request-talent"
