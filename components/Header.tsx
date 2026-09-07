@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { getServiceHref, serviceColumns } from "@/lib/services-data";
+import { assetPath } from "@/lib/site-paths";
 
 // Main navigation links that appear beside the Services dropdown.
 const navLinks = [
@@ -20,7 +22,6 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aboutActive = pathname === "/about";
-  const logoLabel = aboutActive ? "Softzino Technologies" : "Softzino";
   const ctaLabel = aboutActive ? "Schedule a Call" : "Contact Us";
 
   // Keep the desktop mega-menu open while the cursor moves between trigger and panel.
@@ -45,8 +46,19 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-navy-header shadow-header">
       {/* Shared top bar: logo, desktop nav/CTA, and mobile hamburger. */}
       <div className="mx-auto flex h-20 w-full min-w-0 max-w-content items-center justify-between px-4 md:px-8 lg:px-16">
-        <Link href="/" className="min-w-0 break-words text-base font-bold text-white md:text-lg">
-          {logoLabel}
+        <Link
+          href="/"
+          aria-label="Softzino Technologies - Home"
+          className="flex shrink-0 items-center rounded-sm4 bg-white px-2.5 py-1.5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-mint"
+        >
+          <Image
+            src={assetPath("/images/brand/softzino-logo.png")}
+            alt="Softzino Technologies"
+            width={453}
+            height={87}
+            priority
+            className="h-auto w-[150px] object-contain sm:w-[170px] md:w-[200px] xl:w-[236px]"
+          />
         </Link>
 
         {/* Desktop navigation. Hidden on smaller screens in favor of the mobile menu below. */}
