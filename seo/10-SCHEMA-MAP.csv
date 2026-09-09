@@ -1,0 +1,21 @@
+URL,Schema Type,Entity Name,Required Data,Implementation Status,Notes
+sitewide,Organization,Softzino Technologies,"Legal name, logo, domain, sameAs links, verified office facts",Planned,Do not add LocalBusiness or office addresses until verified.
+sitewide,WebSite,Softzino Technologies,"Production domain, site name, search behavior if any",Planned,Add after production domain confirmation.
+/,WebPage,Homepage,"Title, description, canonical URL",Planned,Optional but useful after sitewide helpers exist.
+/about,BreadcrumbList,About,"Home URL, about URL",Planned,Add to inner pages.
+/about,AboutPage,Softzino Technologies,"Verified company facts, founded year, team size, offices",Planned,Avoid unverified claims.
+/services,BreadcrumbList,Services,"Home URL, services URL",Planned,Add to service hub.
+/services,CollectionPage,Software Development Services,"Service category names and URLs",Planned,Optional.
+/solutions/custom-software-solutions,Service,Custom Software Development Services,"Service name, description, provider, area served, offers",Implemented,Already implemented in page-local JSON-LD.
+/solutions/custom-software-solutions,BreadcrumbList,Custom Software Solutions,"Home URL, page URL",Implemented,Already implemented in page-local JSON-LD.
+/solutions/custom-software-solutions,FAQPage,Custom Software FAQ,"Visible FAQ questions and answers",Implemented,Already implemented because FAQ content is visible.
+/hire-developers,Service,Hire Developers,"Approved roles, engagement models, provider, area served",Planned,Add only after lead routing and service facts are approved.
+/hire-developers,FAQPage,Hire Developers FAQ,"Visible FAQs about cost, start time, contracts, IP, management",Planned,Only if FAQ section is visible.
+/services/web-application-development,Service,Web Application Development Services,"Service deliverables, provider, area served, related offers",Planned,Add after page content is sharpened.
+/services/web-application-development,FAQPage,Web Application Development FAQ,"Visible FAQs",Planned,Add after FAQ content is added.
+/services/mobile-app-development,Service,Mobile App Development Services,"Platforms, service description, provider, area served",Planned,Do not promise app store approval.
+/services/mobile-app-development,FAQPage,Mobile App Development FAQ,"Visible FAQs",Planned,Add after FAQ content is added.
+/services/dedicated-development-team,Service,Dedicated Development Team,"Team model facts, management model, onboarding process",Planned,Needs business approval.
+/services/staff-augmentation,Service,Staff Augmentation Services,"Roles, vetting, contract model, time-zone support",Planned,Needs business approval.
+/off-the-shelf-solutions,ItemList,Portfolio Solutions,"Approved product names, descriptions, URLs, screenshots",Planned,Only after product proof is approved.
+
