@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import InfoPage from "@/components/InfoPage";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | Softzino Technologies",
-  description: "Softzino Technologies terms and engagement overview.",
-};
+export const metadata = createPageMetadata("/terms-and-conditions");
 
 export default function TermsAndConditionsPage() {
   return (
     <InfoPage
+      path="/terms-and-conditions"
       eyebrow="Terms"
       title="Terms & Conditions"
       intro="These terms provide a high-level overview of how Softzino frames website use, consultation requests, and service discussions."

@@ -5,17 +5,18 @@ type InfoPageProps = {
   title: string;
   eyebrow: string;
   intro: string;
+  path?: string;
   sections: Array<{
     title: string;
     body: string;
   }>;
 };
 
-export default function InfoPage({ title, eyebrow, intro, sections }: InfoPageProps) {
+export default function InfoPage({ title, eyebrow, intro, path, sections }: InfoPageProps) {
   return (
     <>
       <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
-        <Breadcrumb current={title} />
+        <Breadcrumb current={title} schemaPath={path} />
       </div>
 
       <section className="bg-bg-offwhite">

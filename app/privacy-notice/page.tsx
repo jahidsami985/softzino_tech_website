@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import InfoPage from "@/components/InfoPage";
 
-export const metadata: Metadata = {
-  title: "Privacy Notice | Softzino Technologies",
-  description: "Softzino Technologies privacy notice and data handling overview.",
-};
+export const metadata = createPageMetadata("/privacy-notice");
 
 export default function PrivacyNoticePage() {
   return (
     <InfoPage
+      path="/privacy-notice"
       eyebrow="Privacy"
       title="Privacy Notice"
       intro="This page summarizes how Softzino approaches privacy, confidentiality, and responsible handling of business information."

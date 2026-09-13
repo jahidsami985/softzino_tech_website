@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import BatchServicePage from "@/components/BatchServicePage";
 import { forwardDeployedAiEngineeringService } from "@/lib/batch2-service-data";
 
-export const metadata: Metadata = {
-  title: `${forwardDeployedAiEngineeringService.title} | Softzino Technologies`,
-  description: forwardDeployedAiEngineeringService.description,
-};
+export const metadata = createPageMetadata("/services/forward-deployed-ai-engineering");
 
 export default function ForwardDeployedAiEngineeringPage() {
   return <BatchServicePage data={forwardDeployedAiEngineeringService} />;

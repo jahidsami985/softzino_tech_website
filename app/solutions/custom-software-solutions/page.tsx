@@ -1,4 +1,10 @@
-import type { Metadata } from "next";
+import {
+  absoluteUrl,
+  createPageMetadata,
+  jsonLd,
+  productionOrigin,
+  siteName,
+} from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -19,7 +25,8 @@ import {
 import Breadcrumb from "@/components/Breadcrumb";
 import { assetPath } from "@/lib/site-paths";
 
-const pageUrl = "https://softzino.com/solutions/custom-software-solutions";
+const pagePath = "/solutions/custom-software-solutions";
+const pageUrl = absoluteUrl(pagePath);
 const title = "Custom Software Development Company | Softzino";
 const description =
   "Build secure, scalable software around your business requirements. Softzino provides end-to-end custom software development, testing, deployment and support.";
@@ -125,9 +132,9 @@ const relatedLinks = [
     desc: "Create native and cross-platform mobile experiences.",
   },
   {
-    label: "UI/UX design services",
-    href: "/services/ui-ux-design",
-    desc: "Plan usable product flows and interfaces.",
+    label: "API development services",
+    href: "/services/api-development",
+    desc: "Connect products, platforms, and business systems.",
   },
   {
     label: "Quality engineering services",
@@ -146,23 +153,23 @@ const relatedLinks = [
   },
 ];
 
-const industries = [
-  "Healthcare and HealthTech",
-  "Finance, Banking, and FinTech",
-  "Retail and eCommerce",
-  "Logistics and Supply Chain",
-  "Education and EdTech",
-  "Enterprise IT",
+const projectContexts = [
+  "Internal workflow software",
+  "Customer and partner portals",
+  "Operational dashboards",
+  "Business system integrations",
+  "Legacy application modernization",
+  "Custom SaaS products",
 ];
 
 const differentiators = [
   {
-    title: "Established software engineering team",
-    desc: "The site documents Softzino as a software development company founded in 2015 with a team of 100+ professionals.",
+    title: "Requirement-first planning",
+    desc: "Custom software work starts with the business problem, users, workflows, systems, and constraints.",
   },
   {
-    title: "Broad product and platform coverage",
-    desc: "Existing service areas cover web, mobile, cloud, data, AI, DevOps, QA, integration, and team extension.",
+    title: "Connected engineering coverage",
+    desc: "Softzino service areas cover product design, web, mobile, cloud, data, AI, DevOps, QA, integration, and engineering teams.",
   },
   {
     title: "Flexible delivery models",
@@ -174,22 +181,22 @@ const differentiators = [
   },
 ];
 
-const projectEvidence = [
+const relatedNeeds = [
   {
-    title: "ERP Systems",
-    desc: "Enterprise workflow and business management solution references are listed in the Softzino portfolio.",
+    title: "Workflow Automation",
+    desc: "Replace repetitive manual steps with software that supports the way teams already operate.",
   },
   {
-    title: "Hishabi",
-    desc: "Inventory and POS management software is referenced with Laravel, PostgreSQL, Vue, TypeScript, Tailwind CSS, and Kotlin.",
+    title: "Platform Modernization",
+    desc: "Improve aging tools while protecting the business logic and data that still matter.",
   },
   {
-    title: "Bidyava",
-    desc: "Education technology work is referenced across web, mobile, AWS, and Firebase-supported workflows.",
+    title: "System Integration",
+    desc: "Connect existing applications, databases, APIs, and third-party platforms into cleaner processes.",
   },
   {
-    title: "Autoofix",
-    desc: "Automotive service product work is referenced alongside Softzino's broader custom SaaS and enterprise solution experience.",
+    title: "Product Expansion",
+    desc: "Add new product features, user roles, reporting, and operational tools as requirements evolve.",
   },
 ];
 
@@ -221,34 +228,7 @@ const faqItems = [
   },
 ];
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: {
-    canonical: pageUrl,
-  },
-  openGraph: {
-    title,
-    description,
-    url: pageUrl,
-    siteName: "Softzino",
-    type: "website",
-    images: [
-      {
-        url: "https://softzino.com/img1/planning-session.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Softzino team planning a custom software development project",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-    images: ["https://softzino.com/img1/planning-session.jpeg"],
-  },
-};
+export const metadata = createPageMetadata("/solutions/custom-software-solutions");
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
@@ -259,12 +239,8 @@ const serviceJsonLd = {
   url: pageUrl,
   provider: {
     "@type": "Organization",
-    name: "Softzino",
-    url: "https://softzino.com",
-  },
-  areaServed: {
-    "@type": "Place",
-    name: "Worldwide",
+    name: siteName,
+    url: productionOrigin,
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -288,7 +264,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://softzino.com/",
+      item: absoluteUrl("/"),
     },
     {
       "@type": "ListItem",
@@ -299,25 +275,11 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
-
 export default function CustomSoftwareSolutionsPage() {
   return (
     <>
       <JsonLd data={serviceJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
-      <JsonLd data={faqJsonLd} />
 
       <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
         <Breadcrumb current="Custom Software Solutions" />
@@ -335,9 +297,8 @@ export default function CustomSoftwareSolutionsPage() {
             </h1>
             <p className="mt-6 max-w-full break-words text-lg leading-relaxed text-body-text">
               Softzino is a custom software development company helping businesses turn unique
-              requirements into secure, scalable software. Our team supports companies in the
-              United States and worldwide with end-to-end custom software development from
-              discovery to support.
+              requirements into secure, scalable software. The team supports end-to-end custom
+              software development from discovery to support.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -496,22 +457,22 @@ export default function CustomSoftwareSolutionsPage() {
         <div className="mx-auto grid max-w-content grid-cols-1 gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-2 lg:gap-12 lg:px-16 lg:py-24">
           <div className="min-w-0">
             <p className="font-mono text-xs font-bold uppercase tracking-wide text-teal-primary">
-              Industries
+              Project Contexts
             </p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-text-dark md:text-4xl">
-              Relevant Industries
+              Common Custom Software Needs
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-body-text">
-              Softzino&apos;s existing service content references software work across operational,
-              customer-facing, and enterprise environments.
+              Custom software is usually useful when standard tools do not fit the team,
+              workflow, data, integrations, or product direction.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              {industries.map((industry) => (
+              {projectContexts.map((context) => (
                 <span
-                  key={industry}
+                  key={context}
                   className="max-w-full break-words rounded-card border border-border-light bg-bg-offwhite px-4 py-3 text-sm font-medium text-text-dark"
                 >
-                  {industry}
+                  {context}
                 </span>
               ))}
             </div>
@@ -544,27 +505,27 @@ export default function CustomSoftwareSolutionsPage() {
           <div className="flex flex-col justify-between gap-6 border-b border-border-light pb-8 md:flex-row md:items-end">
             <div className="max-w-3xl">
               <p className="font-mono text-xs font-bold uppercase tracking-wide text-teal-primary">
-                Project Evidence
+                Use Cases
               </p>
               <h2 className="mt-4 text-3xl font-bold leading-tight text-text-dark md:text-4xl">
-                Case Studies and Product References
+                Where Custom Software Helps
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-body-text">
-                These are existing project references from the current Softzino site. No results,
-                ratings, or performance statistics have been added here.
+                Buyers usually look for custom software when their work spans multiple teams,
+                tools, data sources, user roles, or approval paths.
               </p>
             </div>
             <Link
-              href="/off-the-shelf-solutions"
+              href="/services"
               className="inline-flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-sm4 border border-teal-primary px-5 py-4 text-center text-sm font-bold text-teal-primary transition-colors hover:bg-teal-primary hover:text-white sm:w-auto sm:px-6"
             >
-              <span className="min-w-0 break-words">View Portfolio Solutions</span>
+              <span className="min-w-0 break-words">Explore Services</span>
               <ArrowRight size={16} className="shrink-0" />
             </Link>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {projectEvidence.map((item) => (
+            {relatedNeeds.map((item) => (
               <article key={item.title} className="min-w-0 rounded-card bg-white p-6 shadow-card-sm">
                 <h3 className="break-words text-xl font-bold text-navy-deep">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-body-text">{item.desc}</p>
@@ -636,7 +597,7 @@ function JsonLd({ data }: { data: object }) {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+        __html: jsonLd(data),
       }}
     />
   );

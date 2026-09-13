@@ -68,7 +68,7 @@ Implemented on `/solutions/custom-software-solutions`:
 
 - Title: `Custom Software Development Company | Softzino`
 - Meta description: `Build secure, scalable software around your business requirements. Softzino provides end-to-end custom software development, testing, deployment and support.`
-- Canonical: `https://softzino.com/solutions/custom-software-solutions`
+- Canonical: `https://www.softzino.com/solutions/custom-software-solutions`
 - Open Graph title, description, URL, site name, type, and image
 - Twitter summary large image metadata
 
@@ -160,7 +160,7 @@ Local production verification:
 - H1 count: 1.
 - Title output: `Custom Software Development Company | Softzino`.
 - Meta description output: correct.
-- Canonical output: `https://softzino.com/solutions/custom-software-solutions`.
+- Canonical output: `https://www.softzino.com/solutions/custom-software-solutions`.
 - Open Graph title and URL output: correct.
 - Twitter card output: `summary_large_image`.
 - JSON-LD script count: 3.
@@ -187,4 +187,4 @@ Before publishing or expanding this cluster further, verify:
 5. Whether screenshots, logos, metrics, and testimonials can be used on this page.
 6. The final lead destination for consultation requests.
 7. Whether a legacy production URL requires a 301 redirect into `/solutions/custom-software-solutions`.
-8. Whether the production domain is definitively `https://softzino.com`.
+8. Production canonical domain is approved as `https://www.softzino.com`.

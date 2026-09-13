@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import Breadcrumb from "@/components/Breadcrumb";
 import RecognitionSection from "@/components/about/RecognitionSection";
 import {
@@ -21,17 +21,13 @@ import {
 } from "@/components/hire-developers/HireDevelopersSupportSections";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
-export const metadata: Metadata = {
-  title: "Hire Developers | Softzino Technologies",
-  description:
-    "Hire skilled developers from Softzino Technologies for web, mobile, UI/UX, QA, cloud, and enterprise software projects.",
-};
+export const metadata = createPageMetadata("/hire-developers");
 
 export default function HireDevelopersPage() {
   return (
     <>
       <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
-        <Breadcrumb current="Hire Developers" />
+        <Breadcrumb current="Hire Developers" schemaPath="/hire-developers" />
       </div>
 
       <HireDevelopersHero />

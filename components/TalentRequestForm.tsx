@@ -1,31 +1,147 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent, InvalidEvent } from "react";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { trackEvent } from "@/components/Analytics";
+import { getAttribution } from "@/lib/analytics-measurement";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-// Submission endpoint is not configured in this static build.
-// Keep the client confirmation non-persistent until a real endpoint is provided.
-async function submitLeadRequest(): Promise<void> {
-  await new Promise((resolve) => setTimeout(resolve, 700));
+const leadEndpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT;
+const leadEndpointEnv = process.env.NEXT_PUBLIC_LEAD_ENDPOINT_ENV;
+const siteEnv = process.env.NEXT_PUBLIC_SITE_ENV;
+
+function isValidLeadEndpoint(value?: string) {
+  if (!value || !/^https:\/\//i.test(value)) return false;
+  if (siteEnv !== "production" && leadEndpointEnv !== "staging") return false;
+  return true;
+}
+
+type LeadResponse = {
+  submission_id?: unknown;
+  id?: unknown;
+};
+
+function getStoredAttribution() {
+  let landingPage = "";
+  let referrer = "";
+
+  try {
+    landingPage = window.sessionStorage.getItem("softzino_landing_page") || window.location.pathname;
+    referrer = window.sessionStorage.getItem("softzino_referrer") || document.referrer;
+  } catch {
+    landingPage = window.location.pathname;
+    referrer = document.referrer;
+  }
+
+  return getAttribution(window.location.search, referrer, landingPage);
+}
+
+function getSubmissionId(data: LeadResponse) {
+  const value = data.submission_id ?? data.id;
+  return typeof value === "string" || typeof value === "number" ? String(value) : undefined;
+}
+
+async function submitLeadRequest(form: HTMLFormElement): Promise<{ submissionId?: string }> {
+  if (!isValidLeadEndpoint(leadEndpoint)) {
+    throw new Error("missing_lead_endpoint");
+  }
+
+  const body = new FormData(form);
+  const attribution = getStoredAttribution();
+  Object.entries(attribution).forEach(([key, value]) => {
+    if (value) body.set(key, value);
+  });
+
+  const response = await fetch(leadEndpoint as string, {
+    method: "POST",
+    body,
+  });
+
+  if (!response.ok) {
+    throw new Error("lead_endpoint_error");
+  }
+
+  try {
+    const data = (await response.json()) as LeadResponse;
+    return { submissionId: getSubmissionId(data) };
+  } catch {
+    return {};
+  }
 }
 
 export default function TalentRequestForm() {
   // Tracks the form's current UI state: normal, loading, success, or error.
   const [status, setStatus] = useState<Status>("idle");
+  const [started, setStarted] = useState(false);
+  const submittingRef = useRef(false);
+  const lastValidationErrorAt = useRef(0);
 
   // Runs client-side submission feedback, then swaps UI state.
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submittingRef.current) return;
+
+    submittingRef.current = true;
     setStatus("submitting");
 
     try {
-      await submitLeadRequest();
+      const { submissionId } = await submitLeadRequest(e.currentTarget);
+      const attribution = getStoredAttribution();
+      trackEvent("form_submit_success", {
+        page_path: window.location.pathname,
+        form_name: "hire_developers",
+        service: "hire_developers",
+        lead_type: "developer_request",
+        submission_id: submissionId,
+        landing_page: attribution.landing_page,
+        utm_source: attribution.utm_source,
+        utm_medium: attribution.utm_medium,
+        utm_campaign: attribution.utm_campaign,
+      });
       setStatus("success");
-    } catch {
+    } catch (error) {
+      trackEvent("form_submit_error", {
+        page_path: window.location.pathname,
+        form_name: "hire_developers",
+        service: "hire_developers",
+        error_type: error instanceof Error ? error.message : "unknown_error",
+        error_message_group: "lead_submission_failed",
+      });
       setStatus("error");
+    } finally {
+      submittingRef.current = false;
     }
+  };
+
+  const handleFormStart = () => {
+    if (started) return;
+    const attribution = getStoredAttribution();
+    setStarted(true);
+    trackEvent("form_start", {
+      page_path: window.location.pathname,
+      form_name: "hire_developers",
+      service: "hire_developers",
+      form_location: "hire_developers_lead_section",
+      landing_page: attribution.landing_page,
+      referrer: attribution.referrer,
+    });
+  };
+
+  const handleInvalid = (event: InvalidEvent<HTMLFormElement>) => {
+    if (event.target === event.currentTarget) return;
+
+    const now = Date.now();
+    if (now - lastValidationErrorAt.current < 1000) return;
+    lastValidationErrorAt.current = now;
+
+    trackEvent("form_submit_error", {
+      page_path: window.location.pathname,
+      form_name: "hire_developers",
+      service: "hire_developers",
+      error_type: "validation_error",
+      error_message_group: "form_validation_failed",
+    });
   };
 
   // Success replaces the form with a confirmation message and a reset action.
@@ -52,6 +168,8 @@ export default function TalentRequestForm() {
     /* Main talent request form. Field helper components keep repeated input markup consistent. */
     <form
       onSubmit={handleSubmit}
+      onInvalid={handleInvalid}
+      onFocus={handleFormStart}
       className="flex min-w-0 flex-col gap-6 rounded-card border border-border-lighter bg-white p-6 shadow-card-sm sm:p-8 md:p-12"
     >
       <div>
@@ -137,7 +255,8 @@ export default function TalentRequestForm() {
         </button>
         {status === "error" && (
           <p className="text-center text-sm text-red-600">
-            Something went wrong sending your request. Please try again.
+            This form is not connected to a verified lead destination yet. Please use the
+            approved contact route until the endpoint is configured.
           </p>
         )}
         <p className="text-center font-mono text-xs uppercase tracking-wide text-body-text">

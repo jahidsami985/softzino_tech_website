@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import {
   ArrowRight,
   Calendar,
@@ -10,11 +10,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
 import RecognitionSection from "@/components/about/RecognitionSection";
 
-export const metadata: Metadata = {
-  title: "About Us | Softzino Technologies",
-  description:
-    "Learn about Softzino Technologies, a Bangladesh-based software development company founded in 2015 with a 100+ member team and global offices.",
-};
+export const metadata = createPageMetadata("/about");
 
 // Large credibility numbers shown in the About hero.
 const stats = [
@@ -62,7 +58,7 @@ export default function AboutPage() {
     <>
       {/* Breadcrumb keeps secondary pages connected back to Home. */}
       <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
-        <Breadcrumb current="About Us" />
+        <Breadcrumb current="About Us" schemaPath="/about" />
       </div>
 
       {/* Hero: mission statement and top-level company stats. */}

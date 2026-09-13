@@ -1,6 +1,6 @@
 # Business Facts and Approval Gate
 
-Date: 2026-09-09
+Date: 2026-09-13
 
 Purpose: source shared business facts, buyer assumptions, proof gaps, and approval requirements before SEO copy, schema, regional pages, analytics, or launch changes are implemented.
 
@@ -9,7 +9,7 @@ Purpose: source shared business facts, buyer assumptions, proof gaps, and approv
 | Fact | Approved Use | Status | Notes |
 |---|---|---|---|
 | Brand | Softzino Technologies | Verification Required | Confirm exact legal and public brand naming. |
-| Expected production domain | `https://softzino.com` | Verification Required | Needed before canonicals, sitemap, schema IDs, and GSC. |
+| Expected production domain | `https://www.softzino.com` | Approved | Canonical production host for metadataBase, canonicals, sitemap, schema IDs, and GSC. |
 | Core offer | Software development services, custom software, web, mobile, cloud, data, AI, QA, DevOps, integrations, and engineering teams | Verification Required | Use as planning language until owner approves final service priority. |
 | Primary commercial URL for custom software | `/solutions/custom-software-solutions` | Approved planning decision | Only commercial custom software URL. |
 | Target markets | United States, Canada, United Kingdom, Germany as the current Europe research proxy | Verification Required | Additional European countries require owner approval and separate research. |
@@ -76,7 +76,7 @@ Purpose: source shared business facts, buyer assumptions, proof gaps, and approv
 
 | Priority | Fact Needed | Required Owner Answer | Why It Matters | Status |
 |---|---|---|---|---|
-| 1 | Production domain | Confirm final canonical domain | Required for sitemap, robots, metadataBase, canonicals, schema, and GSC | Verification Required |
+| 1 | Production domain | Approved canonical domain: `https://www.softzino.com` | Required for sitemap, robots, metadataBase, canonicals, schema, and GSC | Approved |
 | 2 | Official legal name | Confirm exact company/legal name | Required for Organization schema and footer/legal pages | Verification Required |
 | 3 | Official office addresses | Confirm which public addresses are valid | Prevents misleading LocalBusiness or regional SEO claims | Verification Required |
 | 4 | Regional market claims | Confirm active legal, staffed, client-facing, or sales coverage for each target country | Needed before regional pages or local claims | Verification Required |
@@ -100,7 +100,7 @@ Purpose: source shared business facts, buyer assumptions, proof gaps, and approv
 
 | Approval Item | Approved By | Date | Notes |
 |---|---|---|---|
-| Production domain |  |  | Verification Required |
+| Production domain | Softzino owner | 2026-09-13 | Approved canonical host: `https://www.softzino.com` |
 | Official company facts |  |  | Verification Required |
 | Lead routing |  |  | Verification Required |
 | Analytics access |  |  | Verification Required |

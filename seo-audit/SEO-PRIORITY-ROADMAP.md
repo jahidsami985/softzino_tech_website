@@ -23,7 +23,7 @@ Scores use a 1 to 5 scale:
 6. Fix the `/services/data-platform-engineering` thin page before targeting data engineering keywords.
 7. Fix the `/hire-developers` heading hierarchy and sharpen its intent around role and technology hiring.
 8. Clarify team-model pages to reduce cannibalization: staff augmentation, dedicated development team, team extension, managed engineering team, IT staffing, and hire developers.
-9. Create a dedicated `/services/custom-software-development` page or equivalent core commercial page.
+9. Verify and strengthen `/solutions/custom-software-solutions` as the approved core commercial custom software page.
 10. Improve the homepage and `/services` hub so they route visitors into the right service, team model, industry, or proof path.
 11. Rewrite high-priority service metadata and on-page sections for web apps, mobile apps, AI, cloud consulting, cloud migration, DevOps, QA, MVP, API, and system integration.
 12. Add proof assets: case studies for Hishabi, Bidyava, Autoofix, ERP Systems, and client-permitted delivery stories.
@@ -38,7 +38,7 @@ Scores use a 1 to 5 scale:
 | 1 | Fix lead capture and conversion tracking | SEO traffic has limited value if inquiries do not reach sales or analytics | 5 | 4 | 3 | 5 |
 | 2 | Add sitemap, robots, canonicals, and social metadata | Gives search engines and share platforms a complete technical foundation | 4 | 5 | 2 | 5 |
 | 3 | Add structured data | Helps clarify company, services, breadcrumbs, and FAQs | 3 | 4 | 3 | 5 |
-| 4 | Build a custom software development page | The site claims custom software but lacks a dedicated commercial page | 5 | 5 | 4 | 4 |
+| 4 | Strengthen the approved custom software page | `/solutions/custom-software-solutions` is the approved commercial page and should remain the only custom software URL | 5 | 5 | 4 | 4 |
 | 5 | Strengthen `/hire-developers` | Existing page maps to high commercial intent and many role keywords | 5 | 4 | 3 | 5 |
 | 6 | Differentiate team-model pages | Reduces cannibalization and improves buyer fit across high-value pages | 5 | 4 | 3 | 5 |
 | 7 | Expand data platform engineering | Current page appears thin despite valuable data engineering intent | 4 | 4 | 2 | 5 |
@@ -75,7 +75,7 @@ Scores use a 1 to 5 scale:
 | Priority | Page | Target Cluster | Main Change |
 |---:|---|---|---|
 | 1 | `/hire-developers` | Hire developers and technology-role hiring | Rewrite structure, fix headings, add vetting, pricing model, IP/security, time-zone coverage, FAQs |
-| 2 | Proposed `/services/custom-software-development` | Custom software development company | Create the missing core commercial page |
+| 2 | `/solutions/custom-software-solutions` | Custom software development company | Keep as the only custom software commercial URL and strengthen proof after approval |
 | 3 | `/services/web-application-development` | Web application development company | Add architecture, proof, security, tech stack, FAQs |
 | 4 | `/services/mobile-app-development` | Mobile app development company | Add platform comparison, app process, screenshots, FAQs |
 | 5 | `/services/artificial-intelligence` | AI development company | Add AI use cases, governance, data security, model ops, proof |

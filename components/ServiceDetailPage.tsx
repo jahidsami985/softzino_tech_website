@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { getServiceHref } from "@/lib/services-data";
 import { assetPath } from "@/lib/site-paths";
+import { breadcrumbJsonLd, jsonLd } from "@/lib/seo";
 
 type SummaryItem = {
   title: string;
@@ -96,11 +97,55 @@ const accentClasses: Record<NonNullable<EngagementModel["accent"]>, string> = {
 };
 
 export default function ServiceDetailPage({ data }: { data: ServiceDetailData }) {
+  const path = getServiceHref(data.title);
+  const description = data.intro;
+
   if (data.variant === "training") {
-    return <TrainingServicePage data={data} />;
+    return (
+      <>
+        <ServiceSchema title={data.title} description={description} path={path} />
+        <TrainingServicePage data={data} />
+      </>
+    );
   }
 
-  return <StandardServicePage data={data} />;
+  return (
+    <>
+      <ServiceSchema title={data.title} description={description} path={path} />
+      <StandardServicePage data={data} />
+    </>
+  );
+}
+
+function ServiceSchema({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: title, path },
+        ])}
+      />
+    </>
+  );
+}
+
+function JsonLd({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
+    />
+  );
 }
 
 function StandardServicePage({ data }: { data: StandardServiceData }) {

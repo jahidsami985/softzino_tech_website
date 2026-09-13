@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import BatchServicePage from "@/components/BatchServicePage";
 import { uiUxDesignService } from "@/lib/batch3-service-data";
 
-export const metadata: Metadata = {
-  title: `${uiUxDesignService.title} | Softzino Technologies`,
-  description: uiUxDesignService.description,
-};
+export const metadata = createPageMetadata("/services/ui-ux-design");
 
 export default function UiUxDesignPage() {
   return <BatchServicePage data={uiUxDesignService} />;

@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 import { skillDevelopmentService } from "@/lib/service-detail-data";
 
-export const metadata: Metadata = {
-  title: "Skill Development | Softzino Technologies",
-  description:
-    "Upskill engineering teams through technical training, agile coaching, leadership development, and AI adoption workshops.",
-};
+export const metadata = createPageMetadata("/services/skill-development");
 
 export default function SkillDevelopmentPage() {
   return <ServiceDetailPage data={skillDevelopmentService} />;

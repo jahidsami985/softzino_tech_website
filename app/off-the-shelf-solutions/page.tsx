@@ -1,22 +1,18 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, LayoutGrid, ShoppingCart, Users2 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { assetPath } from "@/lib/site-paths";
 
-export const metadata: Metadata = {
-  title: "Off-the-Shelf Solutions | Softzino Technologies",
-  description:
-    "Softzino Technologies solution references including ERP systems, Hishabi, Bidyava, Autoofix, and other portfolio products.",
-};
+export const metadata = createPageMetadata("/off-the-shelf-solutions");
 
 export default function OffTheShelfPage() {
   return (
     <>
       {/* Breadcrumb keeps this secondary page connected to Home. */}
       <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
-        <Breadcrumb current="Off-the-Shelf Solutions" />
+        <Breadcrumb current="Off-the-Shelf Solutions" schemaPath="/off-the-shelf-solutions" />
       </div>
 
       {/* Hero: explains why these products are faster than custom development. */}

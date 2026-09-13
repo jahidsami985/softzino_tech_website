@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import BatchServicePage from "@/components/BatchServicePage";
 import { mvpDevelopmentService } from "@/lib/batch3-service-data";
 
-export const metadata: Metadata = {
-  title: `${mvpDevelopmentService.title} | Softzino Technologies`,
-  description: mvpDevelopmentService.description,
-};
+export const metadata = createPageMetadata("/services/mvp-development");
 
 export default function MvpDevelopmentPage() {
   return <BatchServicePage data={mvpDevelopmentService} />;

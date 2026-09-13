@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 import { semiconductorTestingService } from "@/lib/service-detail-data";
 
-export const metadata: Metadata = {
-  title: "Semiconductor Testing | Softzino Technologies",
-  description:
-    "Advanced semiconductor validation, DFT, ATE engineering, and reliability testing services for next-generation silicon.",
-};
+export const metadata = createPageMetadata("/services/semiconductor-testing");
 
 export default function SemiconductorTestingPage() {
   return <ServiceDetailPage data={semiconductorTestingService} />;

@@ -57,3 +57,39 @@ Purpose: monitor rankings, indexing, traffic, conversions, redirects, errors, an
 ## Interpretation Rule
 
 Judge early launch quality by tracking accuracy, indexability, crawl health, redirect health, and lead routing. Judge ranking, traffic, and pipeline impact after enough country-specific data accumulates.
+
+## Live Monitoring Run 2026-09-10
+
+Source: live HTTP checks against `https://www.softzino.com` on 2026-09-10. No Search Console, GA4, CRM, hosting log, or lead inbox access was available.
+
+### Confirmed Results
+
+| Area | Result | Affected URLs | Status |
+|---|---|---|---|
+| Live canonical domain | Production responds on the approved `www` canonical host; live pages still need validation after the approved build is deployed. | `/`, `/solutions/custom-software-solutions` | Review Required |
+| Production build match | Live pages are the old Softzino site, not the approved local SEO implementation. | `/`, `/solutions/custom-software-solutions` | Urgent |
+| Priority URLs | Approved routes return 404 on production. | `/hire-developers`, `/services`, `/services/web-application-development`, `/services/mobile-app-development` | Urgent |
+| Sitemap | Live sitemap contains 55 approved-host URLs but old URL patterns instead of the approved implementation route set. | `/sitemap.xml` | Urgent |
+| Robots | Live robots allows general crawling, but it is not the approved generated robots output and no approved sitemap directive was confirmed. | `/robots.txt` | Review Required |
+| Redirects | Legacy URLs return 200 while approved replacement URLs return 404; no approved redirect behavior is live. | `/hireus`, `/services/web-development`, `/services/mobile-application-development` | Urgent |
+| Metadata | Live titles are old production titles, not the approved SEO metadata. | `/`, `/solutions/custom-software-solutions`, legacy service URLs | Urgent |
+| Schema | Live pages contain JSON-LD, but schema was not the approved implementation output. | `/`, `/solutions/custom-software-solutions` | Review Required |
+| Forms | A live form exists on `/solutions/custom-software-solutions`, but public markup does not expose a confirmed form action. | `/solutions/custom-software-solutions` | Blocked |
+| Analytics | Live public markup includes GA/GTM scripts, but account access was unavailable and approved conversion events could not be confirmed. | `/`, `/solutions/custom-software-solutions`, `/hireus` | Blocked |
+
+### Unavailable Data
+
+- Search Console indexing: unavailable; no URL marked `Indexed`.
+- Search Console sitemap status: unavailable.
+- Search performance: unavailable.
+- GA4 conversions and DebugView validation: unavailable.
+- Lead-quality, CRM, inbox, API, webhook, and calendar delivery: unavailable.
+- Hosting logs, crawl error logs, and server redirect configuration: unavailable.
+
+### Next Actions
+
+- Deploy the approved SEO implementation to the production domain before post-launch SEO validation.
+- Enforce the canonical host redirect from apex to `https://www.softzino.com` at the selected production host.
+- Re-run live metadata, schema, robots, sitemap, and priority URL checks after deployment.
+- Approve legacy redirect sources before implementing migration redirects.
+- Provide Search Console, GA4/GTM, lead endpoint, consent, and CRM or inbox access for indexing, conversion, and lead-quality validation.

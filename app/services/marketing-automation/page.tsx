@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import BatchServicePage from "@/components/BatchServicePage";
 import { marketingAutomationService } from "@/lib/batch1-service-data";
 
-export const metadata: Metadata = {
-  title: `${marketingAutomationService.title} | Softzino Technologies`,
-  description: marketingAutomationService.description,
-};
+export const metadata = createPageMetadata("/services/marketing-automation");
 
 export default function MarketingAutomationPage() {
   return <BatchServicePage data={marketingAutomationService} />;

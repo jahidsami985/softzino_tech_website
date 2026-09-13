@@ -1,21 +1,17 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getServiceHref, serviceColumns, slugify } from "@/lib/services-data";
 
-export const metadata: Metadata = {
-  title: "Services | Softzino Technologies",
-  description:
-    "Explore Softzino's full range of services across Product Engineering, Digital Transformation, Cloud Engineering, Data Analytics, Co-Creation, and Consultancy.",
-};
+export const metadata = createPageMetadata("/services");
 
 export default function ServicesPage() {
   return (
     <>
       {/* Breadcrumb keeps this secondary page connected to Home. */}
       <div className="mx-auto max-w-content px-4 pt-8 md:px-8 lg:px-16">
-        <Breadcrumb current="Services" />
+        <Breadcrumb current="Services" schemaPath="/services" />
       </div>
 
       {/* Hero: introduces the full services catalog and primary contact action. */}

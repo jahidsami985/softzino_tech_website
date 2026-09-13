@@ -25,6 +25,9 @@ import {
 import Reveal from "@/components/home/Reveal";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { assetPath } from "@/lib/site-paths";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata("/");
 
 // Homepage service cards. Edit this array to change the "What We Do" grid.
 const whatWeDo = [
@@ -151,14 +154,14 @@ export default function HomePage() {
               className="home-hero-fade-up max-w-full text-2xl font-bold leading-tight text-navy-deep [overflow-wrap:anywhere] sm:text-3xl md:text-4xl"
               style={{ animationDelay: "80ms" }}
             >
-              Engineering Digital Products That Drive Business Growth
+              Software Development Company for Product Engineering and Team Growth
             </h1>
             <p
               className="home-hero-fade-up text-lg leading-relaxed text-body-text"
               style={{ animationDelay: "160ms" }}
             >
-              Supporting startups and enterprises with scalable software, web, mobile, and cloud
-              engineering.
+              Supporting startups and enterprises with scalable software, web, mobile, cloud, data,
+              AI, QA, DevOps, and engineering teams.
             </p>
             <div
               className="home-hero-fade-up flex flex-col gap-4 sm:flex-row sm:flex-wrap"

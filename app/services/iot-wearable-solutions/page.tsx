@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 import { iotWearableService } from "@/lib/service-detail-data";
 
-export const metadata: Metadata = {
-  title: "IoT & Wearable Solutions | Softzino Technologies",
-  description:
-    "Connect physical devices, wearable products, cloud platforms, and analytics with Softzino's IoT engineering team.",
-};
+export const metadata = createPageMetadata("/services/iot-wearable-solutions");
 
 export default function IoTWearableSolutionsPage() {
   return <ServiceDetailPage data={iotWearableService} />;

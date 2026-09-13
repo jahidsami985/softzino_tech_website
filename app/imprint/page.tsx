@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import InfoPage from "@/components/InfoPage";
 
-export const metadata: Metadata = {
-  title: "Imprint / Impressum | Softzino Technologies",
-  description: "Softzino Technologies company imprint and office information.",
-};
+export const metadata = createPageMetadata("/imprint");
 
 export default function ImprintPage() {
   return (
     <InfoPage
+      path="/imprint"
       eyebrow="Company"
       title="Imprint / Impressum"
       intro="Reference information for Softzino Technologies offices and company contact paths."

@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { getServiceHref } from "@/lib/services-data";
 import { assetPath } from "@/lib/site-paths";
+import { breadcrumbJsonLd, jsonLd } from "@/lib/seo";
 
 type ButtonVariant = "dark" | "gold" | "teal" | "outline" | "outlineLight";
 
@@ -198,11 +199,27 @@ const buttonClasses: Record<ButtonVariant, string> = {
 export default function BatchServicePage({ data }: { data: BatchServiceData }) {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: data.title, path: data.route },
+        ])}
+      />
       <Hero hero={data.hero} current={data.title} />
       {data.sections.map((section, index) => (
         <SectionRenderer key={`${section.type}-${section.id ?? index}`} section={section} />
       ))}
     </>
+  );
+}
+
+function JsonLd({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
+    />
   );
 }
 

@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import InfoPage from "@/components/InfoPage";
 
-export const metadata: Metadata = {
-  title: "Press Kit | Softzino Technologies",
-  description: "Softzino Technologies press kit and media information.",
-};
+export const metadata = createPageMetadata("/press-kit");
 
 export default function PressKitPage() {
   return (
     <InfoPage
+      path="/press-kit"
       eyebrow="Media"
       title="Press Kit"
       intro="A quick reference page for media, partner, and company-profile requests related to Softzino Technologies."

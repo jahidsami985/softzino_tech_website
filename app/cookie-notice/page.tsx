@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import InfoPage from "@/components/InfoPage";
 
-export const metadata: Metadata = {
-  title: "Cookie Notice | Softzino Technologies",
-  description: "Softzino Technologies cookie notice and preference overview.",
-};
+export const metadata = createPageMetadata("/cookie-notice");
 
 export default function CookieNoticePage() {
   return (
     <InfoPage
+      path="/cookie-notice"
       eyebrow="Cookies"
       title="Cookie Notice"
       intro="This page explains the intended cookie and preference approach for the Softzino website."

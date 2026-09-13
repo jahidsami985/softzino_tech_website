@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import BatchServicePage from "@/components/BatchServicePage";
 import { physicalAiService } from "@/lib/batch1-service-data";
 
-export const metadata: Metadata = {
-  title: `${physicalAiService.title} | Softzino Technologies`,
-  description: physicalAiService.description,
-};
+export const metadata = createPageMetadata("/services/physical-ai");
 
 export default function PhysicalAiPage() {
   return <BatchServicePage data={physicalAiService} />;

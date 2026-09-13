@@ -50,7 +50,7 @@ Do not create `/services/custom-software-development` unless Softzino intentiona
 The expected production domain is:
 
 ```text
-https://softzino.com
+https://www.softzino.com
 ```
 
 The project owner must confirm the production domain before sitewide canonical URLs, `metadataBase`, sitemap URLs, structured data identifiers, redirects, or Search Console submission are finalized.

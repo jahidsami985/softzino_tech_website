@@ -1,0 +1,28 @@
+# Owner Approval Checklist
+
+Date: 2026-09-10
+
+Purpose: resolve current SEO blockers before page SEO implementation, production launch, analytics validation, redirects, and indexing checks.
+
+| item | current_value_or_candidate | required_input | owner | status | blocking_effect |
+|---|---|---|---|---|---|
+| Canonical production domain | `https://www.softzino.com` approved in code | Use `www` as the production canonical host | Softzino owner | Approved | No longer blocks metadataBase, canonicals, sitemap, schema IDs, or GSC property setup |
+| Deployment target | Next.js normal build; `GITHUB_PAGES=true` enables static export | Confirm Vercel, cPanel/static host, GitHub Pages, or other production host | Owner/Developer | Verification Required | Blocks redirect method, robots/sitemap validation, and launch QA |
+| Production build mismatch | Live `https://www.softzino.com` serves old site; approved SEO build is local only | Confirm deployment plan for approved build | Owner/Developer | Verification Required | Blocks marking pages `Deployed`, `Indexed`, `Monitoring`, or SEO launch complete |
+| Lead endpoint | `NEXT_PUBLIC_LEAD_ENDPOINT` supported; no value confirmed | Provide real HTTPS endpoint, CRM, webhook, inbox workflow, or calendar route | Sales/Developer | Verification Required | Blocks lead form success, `generate_lead`, conversion validation, and SEO traffic promotion |
+| Form success behavior | Code requires endpoint success before success event | Confirm backend success/failure contract and response ID field if available | Developer/Sales | Verification Required | Blocks production lead workflow QA |
+| GA4 configuration | `NEXT_PUBLIC_GA_MEASUREMENT_ID` supported; no value confirmed | Provide valid GA4 measurement ID through environment config | Marketing/Developer | Verification Required | Blocks GA4 event validation and conversion reporting |
+| GTM configuration | `NEXT_PUBLIC_GTM_ID` supported; no value confirmed | Provide valid GTM container ID through environment config if GTM is used | Marketing/Developer | Verification Required | Blocks GTM Preview validation and tag governance |
+| Analytics consent | Env/localStorage consent gate exists; policy not approved | Confirm region-appropriate consent behavior for target markets | Marketing/Legal | Verification Required | Blocks production analytics collection |
+| Google Search Console | No GSC access or property confirmation available | Verify final canonical domain property and submit sitemap | Marketing/Owner | Verification Required | Blocks indexing, sitemap, query, country, and page performance evidence |
+| Brand/legal name | `Softzino Technologies` used as public brand candidate | Confirm exact public brand and legal entity wording | Softzino owner/legal | Verification Required | Blocks Organization schema, legal pages, footer trust copy, and public claims |
+| Office/location facts | Existing facts are unverified; Softzino must not be described as USA-based | Confirm which office addresses and regional presence claims are valid for public use | Owner/Legal | Verification Required | Blocks LocalBusiness schema, regional pages, imprint, and location copy |
+| Target markets | US, Canada, UK, Germany as planning/research proxy | Approve selected European countries and service coverage for each market | Owner/Marketing | Verification Required | Blocks country/location pages and market-specific SEO claims |
+| Public proof | No approved clients, testimonials, awards, certifications, metrics, screenshots, or case studies | Provide permissioned proof assets or confirm none may be used | Owner/Marketing | Verification Required | Blocks proof sections, commercial copy expansion, trust schema, and claims |
+| Security/compliance claims | No approved NDA, IP, GDPR, SOC 2, ISO, HIPAA, PCI, or security statements | Approve exact claims that sales/legal supports | Owner/Legal | Verification Required | Blocks enterprise copy, compliance FAQs, and schema enrichment |
+| Pricing/timeline claims | No approved pricing ranges, rate cards, guarantees, or delivery timelines | Confirm pricing policy and allowed sales language | Owner/Sales | Verification Required | Blocks decision-stage copy and buyer FAQs |
+| Sales owner and SLA | No response owner or SLA confirmed | Provide lead owner, backup owner, monitored inbox, and response-time language | Sales/Owner | Verification Required | Blocks conversion readiness and campaign promotion |
+| Redirect map | Apex-to-www canonical redirect is configured for Next server/Vercel builds; legacy source URLs are still `TBD` | Provide legacy production URL crawl and approved destination for each changed URL | SEO/Owner/Developer | Partially Configured | Blocks migration redirects and old-site replacement QA; canonical host redirect still needs host-level equivalent if static export hosting is selected |
+| Keyword metrics | Keyword metrics remain unverified in source docs | Provide country-specific keyword exports or approve research source updates | SEO/Marketing | Research Required | Blocks moving most pages to `Ready to Implement` |
+| SERP and competitor evidence | Some page opportunities lack current country-specific SERP proof | Complete country-specific SERP checks for target markets | SEO/Marketing | Research Required | Blocks page readiness and cannibalization decisions |
+| Ready-to-implement pages | No current row qualifies as `Ready to Implement` after blocker review | Owner must approve proof, content briefs, CTA destination, metrics, legacy redirects, and acceptance criteria | Owner/Content/SEO | Business Approval Required | Blocks page SEO implementation batch |

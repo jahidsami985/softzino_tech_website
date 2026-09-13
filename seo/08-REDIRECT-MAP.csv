@@ -1,7 +1,7 @@
 Old URL,New URL,Redirect Type,Status,Reason,Notes
-TBD,/solutions/custom-software-solutions,301,Pending legacy URL check,Old custom software URL may exist on previous production site,Confirm old live URLs before implementation.
-TBD,/services,301,Pending legacy URL check,Old service hub URLs may exist,Run crawl of current production domain before launch.
-TBD,/hire-developers,301,Pending legacy URL check,Old hiring or careers-style lead page may exist,Do not redirect job/career pages unless business approves.
-TBD,/off-the-shelf-solutions,301,Pending legacy URL check,Old portfolio or product pages may exist,Map each legacy product URL carefully.
-TBD,TBD,410,Pending content audit,Remove only URLs that should not exist and have no replacement,Use sparingly.
-
+https://softzino.com/:path*,https://www.softzino.com/:path*,301,Configured - Next server/Vercel only,Approved canonical host redirect,Configured in next.config.mjs for non-GitHub Pages builds; host/static providers must preserve path and query strings with an equivalent permanent redirect.
+TBD,/solutions/custom-software-solutions,301,Blocked - legacy URL required,Old custom software URL may exist on previous production site,No redirect implemented until source URL is confirmed and approved.
+TBD,/services,301,Blocked - legacy URL required,Old service hub URLs may exist,No redirect implemented until source URL is confirmed and approved.
+TBD,/hire-developers,301,Blocked - legacy URL required,Old hiring or careers-style lead page may exist,No redirect implemented; do not redirect job/career pages unless business approves.
+TBD,/off-the-shelf-solutions,301,Blocked - legacy URL required,Old portfolio or product pages may exist,No redirect implemented until each legacy product URL is mapped.
+TBD,TBD,410,Blocked - content audit required,Remove only URLs that should not exist and have no replacement,No 410 implemented without approved source URL and removal decision.
